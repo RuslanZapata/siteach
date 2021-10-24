@@ -15,4 +15,14 @@ class MyColors {
   static Color primaryColorText_01 = Color(0xFF9F9F9F);
   static Color primaryColorText_02 = Color(0xFFECCC6E);
   static Color primaryColorText_03 = Color(0xFFFFFFFF);
+
+  static Color getColorFromHex(String hexColor) {
+    hexColor = hexColor.toUpperCase().replaceAll('#', '');
+
+    if (hexColor.length == 6) {
+      hexColor = 'FF' + hexColor;
+    }
+
+    return Color(int.parse(hexColor, radix: 16));
+  }
 }

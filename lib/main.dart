@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:siteach/src/pages/login/login_page.dart';
 import 'package:siteach/src/pages/signup/signup_page.dart';
+import 'package:siteach/src/pages/tools/tools.dart';
 import 'package:siteach/src/utils/my_colors.dart';
 
 void main() {
@@ -24,10 +25,11 @@ class _MyAppState extends State<MyApp> {
       theme: ThemeData(
         primaryColor: MyColors.primaryColor,
       ),
-      initialRoute: 'login',
+      initialRoute: 'tools',
       routes: {
         'login': (BuildContext context) => LoginPage(),
         'signup': (BuildContext context) => SignUpPage(),
+        'tools': (BuildContext context) => Tools(),
       },
     );
   }
