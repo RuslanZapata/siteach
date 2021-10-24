@@ -24,7 +24,7 @@ class _MyAppState extends State<MyApp> {
       theme: ThemeData(
         primaryColor: MyColors.primaryColor,
       ),
-      initialRoute: 'login',
+      initialRoute: 'signup',
       routes: {
         'login': (BuildContext context) => LoginPage(),
         'signup': (BuildContext context) => SignUpPage(),

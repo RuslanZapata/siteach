@@ -1,8 +1,19 @@
-// ignore_for_file: prefer_const_constructors
 // ignore_for_file: prefer_const_literals_to_create_immutables
 // ignore_for_file: avoid_unnecessary_containers
 // ignore_for_file: sized_box_for_whitespace
+// ignore_for_file: prefer_final_fields
+// ignore_for_file: unnecessary_new
+// ignore_for_file: unused_field
+// ignore_for_file: todo
+// ignore_for_file: must_call_super
+// ignore_for_file: prefer_const_constructors
+// ignore_for_file: unused_element
+// ignore_for_file: missing_return
+// ignore_for_file: unused_local_variable
+// ignore_for_file: avoid_print
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
+import 'package:siteach/src/pages/signup/signup_controller.dart';
 import 'package:siteach/src/utils/my_colors.dart';
 
 class SignUpPage extends StatefulWidget {
@@ -13,23 +24,37 @@ class SignUpPage extends StatefulWidget {
 }
 
 class _SignUpPageState extends State<SignUpPage> {
+  SignUpController _con = new SignUpController();
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+
+    SchedulerBinding.instance.addPersistentFrameCallback((timeStamp) {
+      _con.init(context);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: MyColors.primaryColorBackground_01,
       body: Container(
         width: double.infinity,
-        child: Column(
-          children: [
-            imageBanner(),
-            textFieldUserName(),
-            textFieldUser(),
-            textFieldPassword(),
-            textFieldVerifyPassword(),
-            buttonSignUp(),
-            buttonLogin(),
-            // rowTextDontHaveAccount(),
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              imageBanner(),
+              textFieldUserName(),
+              textFieldName(),
+              textFieldLastName(),
+              textFieldPassword(),
+              textFieldVerifyPassword(),
+              buttonSignUp(),
+              buttonLogin(),
+              // rowTextDontHaveAccount(),
+            ],
+          ),
         ),
       ),
     );
@@ -54,8 +79,9 @@ class _SignUpPageState extends State<SignUpPage> {
         borderRadius: BorderRadius.circular(30),
       ),
       child: TextField(
+        controller: _con.usernameController,
         decoration: InputDecoration(
-          hintText: 'Nombre y apellido',
+          hintText: 'Nombre de Usuario',
           border: InputBorder.none,
           contentPadding: EdgeInsets.all(15),
           hintStyle: TextStyle(
@@ -70,7 +96,7 @@ class _SignUpPageState extends State<SignUpPage> {
     );
   }
 
-  Widget textFieldUser() {
+  Widget textFieldName() {
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 50, vertical: 6),
       decoration: BoxDecoration(
@@ -78,8 +104,9 @@ class _SignUpPageState extends State<SignUpPage> {
         borderRadius: BorderRadius.circular(30),
       ),
       child: TextField(
+        controller: _con.nameController,
         decoration: InputDecoration(
-          hintText: 'Usuario',
+          hintText: 'Nombre',
           border: InputBorder.none,
           contentPadding: EdgeInsets.all(15),
           hintStyle: TextStyle(
@@ -87,6 +114,31 @@ class _SignUpPageState extends State<SignUpPage> {
           ),
           prefixIcon: Icon(
             Icons.person,
+            color: MyColors.primaryColor,
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget textFieldLastName() {
+    return Container(
+      margin: EdgeInsets.symmetric(horizontal: 50, vertical: 6),
+      decoration: BoxDecoration(
+        color: MyColors.primaryColorText_03,
+        borderRadius: BorderRadius.circular(30),
+      ),
+      child: TextField(
+        controller: _con.lastNameController,
+        decoration: InputDecoration(
+          hintText: 'Apellido',
+          border: InputBorder.none,
+          contentPadding: EdgeInsets.all(15),
+          hintStyle: TextStyle(
+            color: MyColors.primaryColorText_01,
+          ),
+          prefixIcon: Icon(
+            Icons.person_outline,
             color: MyColors.primaryColor,
           ),
         ),
@@ -102,6 +154,8 @@ class _SignUpPageState extends State<SignUpPage> {
         borderRadius: BorderRadius.circular(30),
       ),
       child: TextField(
+        obscureText: true,
+        controller: _con.passwordController,
         decoration: InputDecoration(
           hintText: 'Ingrese Contraseña',
           border: InputBorder.none,
@@ -126,6 +180,7 @@ class _SignUpPageState extends State<SignUpPage> {
         borderRadius: BorderRadius.circular(30),
       ),
       child: TextField(
+        obscureText: true,
         decoration: InputDecoration(
           hintText: 'Verificación de Contraseña',
           border: InputBorder.none,
@@ -147,7 +202,7 @@ class _SignUpPageState extends State<SignUpPage> {
       width: double.infinity,
       margin: EdgeInsets.symmetric(horizontal: 50, vertical: 5),
       child: ElevatedButton(
-        onPressed: () {},
+        onPressed: _con.singup,
         child: Text(
           'Registrarse',
           style: TextStyle(

@@ -12,29 +12,42 @@
 // ignore_for_file: unused_local_variable
 // ignore_for_file: avoid_print
 import 'package:flutter/material.dart';
+import 'package:siteach/src/models/response_api.dart';
+import 'package:siteach/src/models/users.dart';
+import 'package:siteach/src/provider/user_provider.dart';
 
-class RegisterController {
+class SignUpController {
   BuildContext context;
-  TextEditingController emailController = new TextEditingController();
+  TextEditingController usernameController = new TextEditingController();
   TextEditingController nameController = new TextEditingController();
   TextEditingController lastNameController = new TextEditingController();
-  TextEditingController phoneController = new TextEditingController();
   TextEditingController passwordController = new TextEditingController();
   TextEditingController confirmPasswordController = new TextEditingController();
 
+  UsersProvider usersProvider = new UsersProvider();
+
   Future init(BuildContext context) {
     this.context = context;
+    usersProvider.init(context);
   }
 
-  void register() {
-    String email = emailController.text.trim();
+  void singup() async {
+    String username = usernameController.text.trim();
     String name = nameController.text;
     String lastName = lastNameController.text;
-    String phone = phoneController.text.trim();
     String password = passwordController.text.trim();
     String confirmPassword = confirmPasswordController.text.trim();
 
-    print('Emil: $email');
+    print('Hola Gente');
+
+    User user = new User(
+        username: username, name: name, lastname: lastName, password: password);
+
+    ResponseApi responseApi = await usersProvider.create(user);
+
+    print('RESPUESTA: ${responseApi.toJson()}');
+
+    print('Username: $username');
     print('Password: $password');
     print('Password: $confirmPassword');
   }
