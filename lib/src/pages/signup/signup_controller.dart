@@ -15,10 +15,11 @@ import 'package:flutter/material.dart';
 import 'package:siteach/src/models/response_api.dart';
 import 'package:siteach/src/models/users.dart';
 import 'package:siteach/src/provider/user_provider.dart';
+import 'package:siteach/src/utils/my_snackbar.dart';
 
 class SignUpController {
   BuildContext context;
-  TextEditingController usernameController = new TextEditingController();
+  TextEditingController userNameController = new TextEditingController();
   TextEditingController nameController = new TextEditingController();
   TextEditingController lastNameController = new TextEditingController();
   TextEditingController passwordController = new TextEditingController();
@@ -32,23 +33,41 @@ class SignUpController {
   }
 
   void singup() async {
-    String username = usernameController.text.trim();
+    String userName = userNameController.text.trim();
     String name = nameController.text;
     String lastName = lastNameController.text;
     String password = passwordController.text.trim();
     String confirmPassword = confirmPasswordController.text.trim();
 
-    print('Hola Gente');
+    if (userName.isEmpty ||
+        name.isEmpty ||
+        lastName.isEmpty ||
+        password.isEmpty ||
+        confirmPassword.isEmpty) {
+      print(userName);
+      print(name);
+      print(lastName);
+      print(password);
+      print(confirmPassword);
+      MySnackbar.show(context, 'Debe ingresar todo los campos requeridos');
+      return;
+    }
+
+    if (password != confirmPassword) {
+      MySnackbar.show(context, 'Las contraseñas deben ser iguales');
+      return;
+    }
+
+    if (password.length <= 6) {
+      MySnackbar.show(context, 'La contraseña debe tener mas de 6 caracteres');
+      return;
+    }
 
     User user = new User(
-        username: username, name: name, lastname: lastName, password: password);
+        username: userName, name: name, lastname: lastName, password: password);
 
     ResponseApi responseApi = await usersProvider.create(user);
 
-    print('RESPUESTA: ${responseApi.toJson()}');
-
-    print('Username: $username');
-    print('Password: $password');
-    print('Password: $confirmPassword');
+    MySnackbar.show(context, responseApi.message);
   }
 }

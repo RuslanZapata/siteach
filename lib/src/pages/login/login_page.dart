@@ -77,7 +77,7 @@ class _LoginPageState extends State<LoginPage> {
         borderRadius: BorderRadius.circular(30),
       ),
       child: TextField(
-        controller: _con.userController,
+        controller: _con.userNameController,
         decoration: InputDecoration(
           hintText: 'Usuario',
           border: InputBorder.none,

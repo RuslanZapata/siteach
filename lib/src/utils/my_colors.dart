@@ -11,6 +11,7 @@ class MyColors {
   static Color primaryColorBackground_02 = Color(0xFFEFEDE5);
   static Color primaryColorBackground_03 = Color(0xFF7688A0);
   static Color primaryColorBackground_04 = Color(0xFF9F9F9F);
+  static Color primaryColorBackground_05 = Color(0xFFC6AB5C);
 
   static Color primaryColorText_01 = Color(0xFF9F9F9F);
   static Color primaryColorText_02 = Color(0xFFECCC6E);

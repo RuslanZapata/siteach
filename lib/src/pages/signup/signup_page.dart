@@ -79,7 +79,7 @@ class _SignUpPageState extends State<SignUpPage> {
         borderRadius: BorderRadius.circular(30),
       ),
       child: TextField(
-        controller: _con.usernameController,
+        controller: _con.userNameController,
         decoration: InputDecoration(
           hintText: 'Nombre de Usuario',
           border: InputBorder.none,
@@ -181,6 +181,7 @@ class _SignUpPageState extends State<SignUpPage> {
       ),
       child: TextField(
         obscureText: true,
+        controller: _con.confirmPasswordController,
         decoration: InputDecoration(
           hintText: 'Verificación de Contraseña',
           border: InputBorder.none,

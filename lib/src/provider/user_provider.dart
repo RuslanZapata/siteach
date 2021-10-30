@@ -38,9 +38,32 @@ class UsersProvider {
         'Content-type': 'application/json',
       };
 
-      final response = await http.post(url, headers: headers, body: bodyParams);
+      final res = await http.post(url, headers: headers, body: bodyParams);
 
-      final data = json.decode(response.body);
+      final data = json.decode(res.body);
+
+      ResponseApi responseApi = ResponseApi.fromJson(data);
+
+      return responseApi;
+    } catch (e) {
+      print('Error: $e');
+      return null;
+    }
+  }
+
+  Future<ResponseApi> login(String username, String password) async {
+    try {
+      Uri url = Uri.http(_url, '$_api/login');
+      String bodyParams =
+          json.encode({'username': username, 'password': password});
+
+      Map<String, String> headers = {
+        'Content-type': 'application/json',
+      };
+
+      final res = await http.post(url, headers: headers, body: bodyParams);
+
+      final data = json.decode(res.body);
 
       ResponseApi responseApi = ResponseApi.fromJson(data);
 
