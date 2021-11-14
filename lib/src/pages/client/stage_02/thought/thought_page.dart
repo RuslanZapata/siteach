@@ -30,7 +30,7 @@ class _Stage02ThoughtPageState extends State<Stage02ThoughtPage> {
       backgroundColor: MyColors.primaryColorBackground_01,
       appBar: AppBar(
         title: Text(
-          'Herramientas',
+          'Pensamiento',
           style: TextStyle(
             fontFamily: 'Rationale',
             fontSize: 28,
@@ -46,7 +46,7 @@ class _Stage02ThoughtPageState extends State<Stage02ThoughtPage> {
           child: Column(
             children: [
               containerDescription(
-                  'Es la generación de múltiples ideas sin un orden específico o soluciones opcionales a un problema.|\nEjemplo: Lluvia de ideas.'),
+                  'Es la generación de múltiples ideas sin un orden específico o soluciones opcionales a un problema.\nEjemplo: Lluvia de ideas.'),
               imageBanner(),
               containerDescription(
                   'Analiza las ideas de forma más sistemática y selecciona la mejor utilizando herramientas lógicas, matemáticas o científicas.'),
@@ -55,7 +55,9 @@ class _Stage02ThoughtPageState extends State<Stage02ThoughtPage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.pushNamed(context, 'stage_02/whatsit');
+        },
         tooltip: 'Increment',
         child: Icon(
           Icons.arrow_forward_ios,

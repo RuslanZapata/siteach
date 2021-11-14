@@ -130,7 +130,9 @@ class _Stage03AppliedCasePageState extends State<Stage03AppliedCasePage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.pushNamed(context, 'menuclient');
+        },
         tooltip: 'Increment',
         child: Icon(
           Icons.arrow_forward_ios,

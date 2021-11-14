@@ -17,16 +17,14 @@ import 'package:flutter/material.dart';
 import 'package:siteach/src/pages/client/initiationSIT/entrancesurvey/opcionlist.dart';
 import 'package:siteach/src/utils/my_colors.dart';
 
-class InitiationSITEntranceSurvey02Page extends StatefulWidget {
-  const InitiationSITEntranceSurvey02Page({Key key}) : super(key: key);
+class Stage04Survey01Page extends StatefulWidget {
+  const Stage04Survey01Page({Key key}) : super(key: key);
 
   @override
-  _InitiationSITEntranceSurvey02PageState createState() =>
-      _InitiationSITEntranceSurvey02PageState();
+  _Stage04Survey01PageState createState() => _Stage04Survey01PageState();
 }
 
-class _InitiationSITEntranceSurvey02PageState
-    extends State<InitiationSITEntranceSurvey02Page> {
+class _Stage04Survey01PageState extends State<Stage04Survey01Page> {
   List<OpcionList> opcionList;
   int selectedRadio;
   int selectedRadioTitle;
@@ -59,7 +57,7 @@ class _InitiationSITEntranceSurvey02PageState
       backgroundColor: MyColors.primaryColorBackground_01,
       appBar: AppBar(
         title: Text(
-          'Cuestionario Motivación',
+          'Cuestionario Satisfacción',
           style: TextStyle(
             fontFamily: 'Rationale',
             fontSize: 28,
@@ -91,19 +89,19 @@ class _InitiationSITEntranceSurvey02PageState
               Container(
                 child: Column(
                   children: [
-                    question_01(),
+                    question_05(),
                     ListRadio_01(),
                     ListRadio_02(),
                     ListRadio_03(),
                     ListRadio_04(),
                     ListRadio_05(),
-                    question_02(),
+                    question_06(),
                     ListRadio_01(),
                     ListRadio_02(),
                     ListRadio_03(),
                     ListRadio_04(),
                     ListRadio_05(),
-                    question_03(),
+                    question_07(),
                     ListRadio_01(),
                     ListRadio_02(),
                     ListRadio_03(),
@@ -118,7 +116,7 @@ class _InitiationSITEntranceSurvey02PageState
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          Navigator.pushNamed(context, 'initiationsit/entrancesurvey_01');
+          Navigator.pushNamed(context, 'stage_04/menucasesurvey');
         },
         tooltip: 'Increment',
         child: Icon(
@@ -130,13 +128,13 @@ class _InitiationSITEntranceSurvey02PageState
     );
   }
 
-  Widget question_01() {
+  Widget question_05() {
     return Align(
       alignment: Alignment.topLeft,
       child: Container(
         margin: EdgeInsets.fromLTRB(0, 0, 0, 0),
         child: Text(
-          '1.	¿Qué tan satisfecho (a) se encuentra respecto al método de resolución de problemas que aplica actualmente en su vida diaria?',
+          '5.	¿Qué tan motivado (a) se encuentra respecto al uso de un aplicativo móvil como apoyo de aprendizaje de algún tema?',
           style: TextStyle(
             fontSize: 16,
             fontFamily: 'Puritan',
@@ -146,13 +144,13 @@ class _InitiationSITEntranceSurvey02PageState
     );
   }
 
-  Widget question_02() {
+  Widget question_06() {
     return Align(
       alignment: Alignment.topLeft,
       child: Container(
         margin: EdgeInsets.fromLTRB(0, 0, 0, 0),
         child: Text(
-          '2.	¿Qué tan satisfecho (a) se encuentra respecto al uso de un aplicativo móvil como apoyo de aprendizaje de algún tema?',
+          '6.	¿Qué tan motivado (a) se encuentra respecto a aprender a resolver problemas de forma creativa y ordenada?',
           style: TextStyle(
             fontSize: 16,
             fontFamily: 'Puritan',
@@ -162,13 +160,13 @@ class _InitiationSITEntranceSurvey02PageState
     );
   }
 
-  Widget question_03() {
+  Widget question_07() {
     return Align(
       alignment: Alignment.topLeft,
       child: Container(
         margin: EdgeInsets.fromLTRB(0, 0, 0, 0),
         child: Text(
-          '3.	¿Qué tan satisfecho (a) se encuentra respecto al contenido del tema de aprendizaje a través de una aplicación móvil?',
+          '7.	¿Qué tan motivado se encuentra en aplicar nuevas técnicas de resolución de problemas creativos en su vida diaria?',
           style: TextStyle(
             fontSize: 16,
             fontFamily: 'Puritan',

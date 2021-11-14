@@ -30,7 +30,7 @@ class _Stage02WhatSITPageState extends State<Stage02WhatSITPage> {
       backgroundColor: MyColors.primaryColorBackground_01,
       appBar: AppBar(
         title: Text(
-          'Herramientas',
+          '¿Qué es SIT?',
           style: TextStyle(
             fontFamily: 'Rationale',
             fontSize: 28,
@@ -69,7 +69,9 @@ class _Stage02WhatSITPageState extends State<Stage02WhatSITPage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.pushNamed(context, 'stage_02/toolsit_01');
+        },
         tooltip: 'Increment',
         child: Icon(
           Icons.arrow_forward_ios,

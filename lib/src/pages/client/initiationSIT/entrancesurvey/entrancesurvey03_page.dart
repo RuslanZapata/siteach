@@ -124,7 +124,9 @@ class _InitiationSITEntranceSurvey03PageState
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.pushNamed(context, 'initiationsit/entrancesurvey_02');
+        },
         tooltip: 'Increment',
         child: Icon(
           Icons.arrow_forward_ios,

@@ -5,7 +5,7 @@ User userFromJson(String str) => User.fromJson(json.decode(str));
 String userToJson(User data) => json.encode(data.toJson());
 
 class User {
-  String id;
+  String idUser;
   String username;
   String name;
   String lastname;
@@ -13,7 +13,7 @@ class User {
   String sessionToken;
 
   User({
-    this.id,
+    this.idUser,
     this.username,
     this.name,
     this.lastname,
@@ -22,7 +22,7 @@ class User {
   });
 
   factory User.fromJson(Map<String, dynamic> json) => User(
-        id: json["id"],
+        idUser: json["idUser"],
         username: json["username"],
         name: json["name"],
         lastname: json["lastname"],
@@ -31,7 +31,7 @@ class User {
       );
 
   Map<String, dynamic> toJson() => {
-        "id": id,
+        "idUser": idUser,
         "username": username,
         "name": name,
         "lastname": lastname,

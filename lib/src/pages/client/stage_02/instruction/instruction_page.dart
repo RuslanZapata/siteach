@@ -47,9 +47,9 @@ class _Stage02InstructionPageState extends State<Stage02InstructionPage> {
   Widget imageBanner() {
     return Container(
       margin: EdgeInsets.only(
-          top: 100, bottom: MediaQuery.of(context).size.height * 0.05),
+          top: 160, bottom: MediaQuery.of(context).size.height * 0.1),
       child: Image.asset(
-        'assets/img/hello.png',
+        'assets/img/instrucciones.png',
         width: 300,
       ),
     );
@@ -70,7 +70,7 @@ class _Stage02InstructionPageState extends State<Stage02InstructionPage> {
         children: [
           Container(
             child: Text(
-              'Gracias por estar aquí.',
+              'Esta es la etapa de aprendizaje.',
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: 18,
@@ -83,7 +83,7 @@ class _Stage02InstructionPageState extends State<Stage02InstructionPage> {
           ),
           Container(
             child: Text(
-              'Antes de comenzar, necesitamos que llenes algunas preguntas.',
+              'Esta etapa cuenta con los conceptos y ejemplos de los componentes de la metodología SIT',
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: 18,
@@ -96,7 +96,7 @@ class _Stage02InstructionPageState extends State<Stage02InstructionPage> {
           ),
           Container(
             child: Text(
-              'Esto es con el fin de medir el progreso al final del curso.',
+              'Tranquilo, no será nada complicado.',
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: 18,
@@ -114,7 +114,9 @@ class _Stage02InstructionPageState extends State<Stage02InstructionPage> {
       width: double.infinity,
       margin: EdgeInsets.symmetric(horizontal: 50, vertical: 50),
       child: ElevatedButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.pushNamed(context, 'stage_02/thought');
+        },
         child: Text(
           'Comencemos',
           style: TextStyle(color: MyColors.primaryColorText_02),

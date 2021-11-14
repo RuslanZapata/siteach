@@ -30,7 +30,7 @@ class _MenuClientPageState extends State<MenuClientPage> {
       backgroundColor: MyColors.primaryColorBackground_01,
       appBar: AppBar(
         title: Text(
-          'Herramientas',
+          'Menú',
           style: TextStyle(
             fontFamily: 'Rationale',
             fontSize: 28,
@@ -59,7 +59,8 @@ class _MenuClientPageState extends State<MenuClientPage> {
                   ),
                 ),
 //        color: Colors.grey,
-                child: buttonSignUp('Etapa 1: ¿Qué harías tú?'),
+                child: buttonSignUp(
+                    'Etapa 1: ¿Qué harías tú?', 'stage_01/instructionpage'),
               ),
               Container(
                 margin: EdgeInsets.only(bottom: 16.0),
@@ -75,7 +76,8 @@ class _MenuClientPageState extends State<MenuClientPage> {
                   ),
                 ),
 //        color: Colors.grey,
-                child: buttonSignUp('Etapa 2: ¡Aprendamos un poco!'),
+                child: buttonSignUp('Etapa 2: ¡Aprendamos un poco!',
+                    'stage_02/instructionpage'),
               ),
               Container(
                 margin: EdgeInsets.only(bottom: 16.0),
@@ -91,7 +93,8 @@ class _MenuClientPageState extends State<MenuClientPage> {
                   ),
                 ),
 //        color: Colors.grey,
-                child: buttonSignUp('Etapa 3: Evalúate'),
+                child: buttonSignUp(
+                    'Etapa 3: Recursos de apoyo', 'stage_03/instructionpage'),
               ),
               Container(
                 margin: EdgeInsets.only(bottom: 16.0),
@@ -107,21 +110,22 @@ class _MenuClientPageState extends State<MenuClientPage> {
                   ),
                 ),
 //        color: Colors.grey,
-                child: buttonSignUp('Recursos adicionales'),
+                child: buttonSignUp(
+                    'Etapa 4: Evalúate', 'stage_04/instructionpage'),
               ),
             ],
           ),
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        tooltip: 'Increment',
-        child: Icon(
-          Icons.arrow_forward_ios,
-          color: MyColors.primaryColorText_02,
-        ),
-        backgroundColor: MyColors.primaryColor,
-      ),
+      // floatingActionButton: FloatingActionButton(
+      //   onPressed: () {},
+      //   tooltip: 'Increment',
+      //   child: Icon(
+      //     Icons.arrow_forward_ios,
+      //     color: MyColors.primaryColorText_02,
+      //   ),
+      //   backgroundColor: MyColors.primaryColor,
+      // ),
     );
   }
 
@@ -137,12 +141,14 @@ class _MenuClientPageState extends State<MenuClientPage> {
     );
   }
 
-  Widget buttonSignUp(String textButton) {
+  Widget buttonSignUp(String textButton, String textLink) {
     return Container(
       width: double.infinity,
       margin: EdgeInsets.symmetric(horizontal: 2, vertical: 0),
       child: ElevatedButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.pushNamed(context, textLink);
+        },
         child: Text(
           textButton,
           style: TextStyle(

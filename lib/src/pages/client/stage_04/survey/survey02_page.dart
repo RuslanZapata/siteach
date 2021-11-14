@@ -17,16 +17,14 @@ import 'package:flutter/material.dart';
 import 'package:siteach/src/pages/client/initiationSIT/entrancesurvey/opcionlist.dart';
 import 'package:siteach/src/utils/my_colors.dart';
 
-class InitiationSITEntranceSurvey02Page extends StatefulWidget {
-  const InitiationSITEntranceSurvey02Page({Key key}) : super(key: key);
+class Stage04Survey02Page extends StatefulWidget {
+  const Stage04Survey02Page({Key key}) : super(key: key);
 
   @override
-  _InitiationSITEntranceSurvey02PageState createState() =>
-      _InitiationSITEntranceSurvey02PageState();
+  _Stage04Survey02PageState createState() => _Stage04Survey02PageState();
 }
 
-class _InitiationSITEntranceSurvey02PageState
-    extends State<InitiationSITEntranceSurvey02Page> {
+class _Stage04Survey02PageState extends State<Stage04Survey02Page> {
   List<OpcionList> opcionList;
   int selectedRadio;
   int selectedRadioTitle;
@@ -118,7 +116,7 @@ class _InitiationSITEntranceSurvey02PageState
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          Navigator.pushNamed(context, 'initiationsit/entrancesurvey_01');
+          Navigator.pushNamed(context, 'stage_04/survey_01');
         },
         tooltip: 'Increment',
         child: Icon(

@@ -67,14 +67,14 @@ class _Stage01Caso03PageState extends State<Stage01Caso03Page> {
                       children: [
                         imagenContent_01(),
                         textContent(
-                            'Un vendedor de globos de helio en la sala de espera de un aeropuerto, notó que muchos de estos globos se soltaron involuntariamente de las manos de las personas y se elevaron en el techo, muy alto.'),
+                            'Las enormes piscinas ubicadas en los barcos de pesca se utilizan para almacenar el pescado capturado en el mar mientras se transporta a tierra.'),
                       ],
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         textContent(
-                            'El vendedor quiere aprovechar por las noches para recuperar los globos del techo y reevenderlos.'),
+                            'Para conservar su delicado sabor, los peces deben ser obligados a nadar rápidamente dentro de las piscinas, como en mar abierto.'),
                         imagenContent_02(),
                       ],
                     ),
@@ -150,7 +150,7 @@ class _Stage01Caso03PageState extends State<Stage01Caso03Page> {
       width: 160,
       height: 180,
       child: Image.asset(
-        'assets/img/globos1.png',
+        'assets/img/barco.png',
         // width: 110,
       ),
     );
@@ -161,7 +161,7 @@ class _Stage01Caso03PageState extends State<Stage01Caso03Page> {
       width: 160,
       height: 180,
       child: Image.asset(
-        'assets/img/globos2.png',
+        'assets/img/peces.png',
         // width: 110,
       ),
     );
@@ -172,7 +172,7 @@ class _Stage01Caso03PageState extends State<Stage01Caso03Page> {
       margin: EdgeInsets.symmetric(horizontal: 0, vertical: 10),
       width: double.infinity,
       child: Text(
-        '¿Qué podría hacer para recuperar los globos?',
+        '¿Puede sugerir una solución a este problema?',
         textAlign: TextAlign.justify,
         style: TextStyle(
           fontSize: 17,
@@ -187,7 +187,9 @@ class _Stage01Caso03PageState extends State<Stage01Caso03Page> {
       margin: EdgeInsets.symmetric(horizontal: 0, vertical: 10),
       width: 150,
       child: ElevatedButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.pushNamed(context, 'menuclient');
+        },
         child: Text(
           textButton,
           style: TextStyle(

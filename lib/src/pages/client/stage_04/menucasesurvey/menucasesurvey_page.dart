@@ -60,13 +60,7 @@ class _Stage04MenuCaseSurveyPageState extends State<Stage04MenuCaseSurveyPage> {
                   ),
                 ),
 //        color: Colors.grey,
-                child: Text(
-                  'CASOS',
-                  style: TextStyle(
-                    fontSize: 60,
-                    fontFamily: 'Rationale',
-                  ),
-                ),
+                child: buttonSignUp('CASOS', 'stage_04/caso_01'),
               ),
               Container(
                 margin: EdgeInsets.only(bottom: 16.0),
@@ -82,27 +76,21 @@ class _Stage04MenuCaseSurveyPageState extends State<Stage04MenuCaseSurveyPage> {
                   ),
                 ),
 //        color: Colors.grey,
-                child: Text(
-                  'PREGUNTAS',
-                  style: TextStyle(
-                    fontSize: 60,
-                    fontFamily: 'Rationale',
-                  ),
-                ),
+                child: buttonSignUp('PREGUNTAS', 'stage_04/survey_03'),
               ),
             ],
           ),
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        tooltip: 'Increment',
-        child: Icon(
-          Icons.arrow_forward_ios,
-          color: MyColors.primaryColorText_02,
-        ),
-        backgroundColor: MyColors.primaryColor,
-      ),
+      // floatingActionButton: FloatingActionButton(
+      //   onPressed: () {},
+      //   tooltip: 'Increment',
+      //   child: Icon(
+      //     Icons.arrow_forward_ios,
+      //     color: MyColors.primaryColorText_02,
+      //   ),
+      //   backgroundColor: MyColors.primaryColor,
+      // ),
     );
   }
 
@@ -118,22 +106,25 @@ class _Stage04MenuCaseSurveyPageState extends State<Stage04MenuCaseSurveyPage> {
     );
   }
 
-  Widget buttonSignUp(String textButton) {
+  Widget buttonSignUp(String textButton, String textLink) {
     return Container(
       width: double.infinity,
       margin: EdgeInsets.symmetric(horizontal: 2, vertical: 0),
       child: ElevatedButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.pushNamed(context, textLink);
+        },
         child: Text(
           textButton,
           style: TextStyle(
-            fontSize: 16,
-            fontFamily: 'Mulish',
-            color: MyColors.primaryColorText_02,
+            fontSize: 50,
+            fontFamily: 'Rationale',
+            color: MyColors.primaryColorBackground_05,
           ),
         ),
         style: ElevatedButton.styleFrom(
-          primary: Colors.black.withOpacity(0.1),
+          // primary: Colors.black.withOpacity(0.1),
+          primary: Colors.white.withOpacity(0),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(30),
           ),

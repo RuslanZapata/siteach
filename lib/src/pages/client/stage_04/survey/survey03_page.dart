@@ -17,16 +17,14 @@ import 'package:flutter/material.dart';
 import 'package:siteach/src/pages/client/initiationSIT/entrancesurvey/opcionlist.dart';
 import 'package:siteach/src/utils/my_colors.dart';
 
-class InitiationSITEntranceSurvey02Page extends StatefulWidget {
-  const InitiationSITEntranceSurvey02Page({Key key}) : super(key: key);
+class Stage04Survey03Page extends StatefulWidget {
+  const Stage04Survey03Page({Key key}) : super(key: key);
 
   @override
-  _InitiationSITEntranceSurvey02PageState createState() =>
-      _InitiationSITEntranceSurvey02PageState();
+  _Stage04Survey03PageState createState() => _Stage04Survey03PageState();
 }
 
-class _InitiationSITEntranceSurvey02PageState
-    extends State<InitiationSITEntranceSurvey02Page> {
+class _Stage04Survey03PageState extends State<Stage04Survey03Page> {
   List<OpcionList> opcionList;
   int selectedRadio;
   int selectedRadioTitle;
@@ -59,7 +57,7 @@ class _InitiationSITEntranceSurvey02PageState
       backgroundColor: MyColors.primaryColorBackground_01,
       appBar: AppBar(
         title: Text(
-          'Cuestionario Motivación',
+          'Cuestionario Conocimiento',
           style: TextStyle(
             fontFamily: 'Rationale',
             fontSize: 28,
@@ -80,7 +78,7 @@ class _InitiationSITEntranceSurvey02PageState
                   // padding: EdgeInsets.fromLTRB(30, 15, 30, 15),
                   padding: EdgeInsets.fromLTRB(0, 15, 0, 5),
                   child: Text(
-                    'Queremos saber cómo te sientes, selecciona la alternativa más adecuada para las siguientes preguntas, por favor.',
+                    'Queremos saber cuánto conoces al respecto del tema, selecciona la alternativa más adecuada para las siguientes preguntas, por favor.',
                     style: TextStyle(
                       fontSize: 14,
                       fontFamily: 'Puritan-Regular',
@@ -92,23 +90,30 @@ class _InitiationSITEntranceSurvey02PageState
                 child: Column(
                   children: [
                     question_01(),
-                    ListRadio_01(),
-                    ListRadio_02(),
-                    ListRadio_03(),
-                    ListRadio_04(),
-                    ListRadio_05(),
+                    ListRadio_01(
+                        'Proceso de generar ideas nuevas y creativas.'),
+                    ListRadio_02(
+                        'Creación de ideas abstractas provenientes de la imaginación.'),
+                    ListRadio_03(
+                        'Aplicación de la creatividad en una realidad para generar soluciones y oportunidades.'),
                     question_02(),
-                    ListRadio_01(),
-                    ListRadio_02(),
-                    ListRadio_03(),
-                    ListRadio_04(),
-                    ListRadio_05(),
+                    ListRadio_01('Systematic Innovative Thinking.'),
+                    ListRadio_02('Systematic Inventive Thinking.'),
+                    ListRadio_03('Systematic Innovative Task.'),
                     question_03(),
-                    ListRadio_01(),
-                    ListRadio_02(),
-                    ListRadio_03(),
-                    ListRadio_04(),
-                    ListRadio_05(),
+                    ListRadio_01(
+                        'Enfoque para la resolución creativa de problemas y el desarrollo de nuevos productos y / o servicios.'),
+                    ListRadio_02(
+                        'b)	Enfoque para el desarrollo de ideas creativas.'),
+                    ListRadio_03(
+                        'Enfoque para la resolución de problemas asignando un nuevo uso a un componente.'),
+                    question_04(),
+                    ListRadio_01(
+                        'a)	Dependencia de atributos, División, Mundo Cerrado, Multiplicación, Unificación de tareas.'),
+                    ListRadio_02(
+                        'Dependencia de atributos, División, Mundo Cerrado, Multiplicación, Unificación de tareas.'),
+                    ListRadio_03(
+                        'a)	Dependencia de atributos, División, Mundo Cerrado, Multiplicación, Unificación de tareas.'),
                   ],
                 ),
               ),
@@ -118,7 +123,7 @@ class _InitiationSITEntranceSurvey02PageState
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          Navigator.pushNamed(context, 'initiationsit/entrancesurvey_01');
+          Navigator.pushNamed(context, 'stage_04/survey_02');
         },
         tooltip: 'Increment',
         child: Icon(
@@ -136,7 +141,7 @@ class _InitiationSITEntranceSurvey02PageState
       child: Container(
         margin: EdgeInsets.fromLTRB(0, 0, 0, 0),
         child: Text(
-          '1.	¿Qué tan satisfecho (a) se encuentra respecto al método de resolución de problemas que aplica actualmente en su vida diaria?',
+          '1.	¿Qué es la innovación?',
           style: TextStyle(
             fontSize: 16,
             fontFamily: 'Puritan',
@@ -152,7 +157,7 @@ class _InitiationSITEntranceSurvey02PageState
       child: Container(
         margin: EdgeInsets.fromLTRB(0, 0, 0, 0),
         child: Text(
-          '2.	¿Qué tan satisfecho (a) se encuentra respecto al uso de un aplicativo móvil como apoyo de aprendizaje de algún tema?',
+          '2.	¿Qué significa SIT?',
           style: TextStyle(
             fontSize: 16,
             fontFamily: 'Puritan',
@@ -168,7 +173,23 @@ class _InitiationSITEntranceSurvey02PageState
       child: Container(
         margin: EdgeInsets.fromLTRB(0, 0, 0, 0),
         child: Text(
-          '3.	¿Qué tan satisfecho (a) se encuentra respecto al contenido del tema de aprendizaje a través de una aplicación móvil?',
+          '3.	¿Cuál es el enfoque de SIT?',
+          style: TextStyle(
+            fontSize: 16,
+            fontFamily: 'Puritan',
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget question_04() {
+    return Align(
+      alignment: Alignment.topLeft,
+      child: Container(
+        margin: EdgeInsets.fromLTRB(0, 0, 20, 0),
+        child: Text(
+          '4.	¿Cuáles son las herramientas de pensamiento para la resolución de problemas?',
           style: TextStyle(
             fontSize: 16,
             fontFamily: 'Puritan',
@@ -232,7 +253,7 @@ class _InitiationSITEntranceSurvey02PageState
     );
   }
 
-  Widget ListRadio_01() {
+  Widget ListRadio_01(String alternativa) {
     return Row(
       children: [
         Radio(
@@ -244,17 +265,20 @@ class _InitiationSITEntranceSurvey02PageState
             print('value: $val');
           },
         ),
-        Text(
-          'Nada satisfecho',
-          style: TextStyle(
-            fontFamily: 'Puritan-Regular',
+        Container(
+          width: 280,
+          child: Text(
+            alternativa,
+            style: TextStyle(
+              fontFamily: 'Puritan-Regular',
+            ),
           ),
         ),
       ],
     );
   }
 
-  Widget ListRadio_02() {
+  Widget ListRadio_02(String alternativa) {
     return Row(
       children: [
         Radio(
@@ -266,17 +290,20 @@ class _InitiationSITEntranceSurvey02PageState
             print('value: $val');
           },
         ),
-        Text(
-          'Poco satisfecho',
-          style: TextStyle(
-            fontFamily: 'Puritan-Regular',
+        Container(
+          width: 280,
+          child: Text(
+            alternativa,
+            style: TextStyle(
+              fontFamily: 'Puritan-Regular',
+            ),
           ),
         ),
       ],
     );
   }
 
-  Widget ListRadio_03() {
+  Widget ListRadio_03(String alternativa) {
     return Row(
       children: [
         Radio(
@@ -288,17 +315,20 @@ class _InitiationSITEntranceSurvey02PageState
             print('value: $val');
           },
         ),
-        Text(
-          'Ni poco ni muy satisfecho',
-          style: TextStyle(
-            fontFamily: 'Puritan-Regular',
+        Container(
+          width: 280,
+          child: Text(
+            alternativa,
+            style: TextStyle(
+              fontFamily: 'Puritan-Regular',
+            ),
           ),
         ),
       ],
     );
   }
 
-  Widget ListRadio_04() {
+  Widget ListRadio_04(String alternativa) {
     return Row(
       children: [
         Radio(
@@ -310,32 +340,13 @@ class _InitiationSITEntranceSurvey02PageState
             print('value: $val');
           },
         ),
-        Text(
-          'Muy satisfecho',
-          style: TextStyle(
-            fontFamily: 'Puritan-Regular',
-          ),
-        ),
-      ],
-    );
-  }
-
-  Widget ListRadio_05() {
-    return Row(
-      children: [
-        Radio(
-          value: 5,
-          groupValue: selectedRadio,
-          activeColor: MyColors.primaryColor,
-          onChanged: (val) {
-            setSelectedRadio(val);
-            print('value: $val');
-          },
-        ),
-        Text(
-          'Bastante satisfecho',
-          style: TextStyle(
-            fontFamily: 'Puritan-Regular',
+        Container(
+          width: 280,
+          child: Text(
+            alternativa,
+            style: TextStyle(
+              fontFamily: 'Puritan-Regular',
+            ),
           ),
         ),
       ],

@@ -116,7 +116,9 @@ class _InitiationSITInstructionPageState
       width: double.infinity,
       margin: EdgeInsets.symmetric(horizontal: 50, vertical: 50),
       child: ElevatedButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.pushNamed(context, 'initiationsit/entrancesurvey_03');
+        },
         child: Text(
           'Comencemos',
           style: TextStyle(color: MyColors.primaryColorText_02),

@@ -161,7 +161,7 @@ class _Stage01Caso02PageState extends State<Stage01Caso02Page> {
       width: 160,
       height: 180,
       child: Image.asset(
-        'assets/img/globos2.png',
+        'assets/img/egipto.png',
         // width: 110,
       ),
     );
@@ -172,7 +172,7 @@ class _Stage01Caso02PageState extends State<Stage01Caso02Page> {
       margin: EdgeInsets.symmetric(horizontal: 0, vertical: 10),
       width: double.infinity,
       child: Text(
-        '¿Cómo podría el arquitecto solucionar este problema?',
+        ' ¿Cómo podría el arquitecto solucionar este problema?',
         textAlign: TextAlign.justify,
         style: TextStyle(
           fontSize: 17,
@@ -187,7 +187,9 @@ class _Stage01Caso02PageState extends State<Stage01Caso02Page> {
       margin: EdgeInsets.symmetric(horizontal: 0, vertical: 10),
       width: 150,
       child: ElevatedButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.pushNamed(context, 'stage_01/caso_03');
+        },
         child: Text(
           textButton,
           style: TextStyle(

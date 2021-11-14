@@ -47,9 +47,9 @@ class _Stage03InstructionPageState extends State<Stage03InstructionPage> {
   Widget imageBanner() {
     return Container(
       margin: EdgeInsets.only(
-          top: 100, bottom: MediaQuery.of(context).size.height * 0.05),
+          top: 160, bottom: MediaQuery.of(context).size.height * 0.1),
       child: Image.asset(
-        'assets/img/hello.png',
+        'assets/img/instrucciones.png',
         width: 300,
       ),
     );
@@ -57,8 +57,11 @@ class _Stage03InstructionPageState extends State<Stage03InstructionPage> {
 
   Widget InstructionContainer() {
     return Container(
-      margin: EdgeInsets.only(left: 30, right: 30),
-      padding: EdgeInsets.only(left: 30, right: 30, top: 50, bottom: 50),
+      margin: EdgeInsets.only(
+        left: 30,
+        right: 30,
+      ),
+      padding: EdgeInsets.only(left: 40, right: 40, top: 130, bottom: 130),
       width: double.infinity,
       decoration: BoxDecoration(
         border: Border.all(
@@ -70,33 +73,7 @@ class _Stage03InstructionPageState extends State<Stage03InstructionPage> {
         children: [
           Container(
             child: Text(
-              'Gracias por estar aquí.',
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontSize: 18,
-                fontFamily: 'Quando',
-              ),
-            ),
-          ),
-          SizedBox(
-            height: 35,
-          ),
-          Container(
-            child: Text(
-              'Antes de comenzar, necesitamos que llenes algunas preguntas.',
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontSize: 18,
-                fontFamily: 'Quando',
-              ),
-            ),
-          ),
-          SizedBox(
-            height: 35,
-          ),
-          Container(
-            child: Text(
-              'Esto es con el fin de medir el progreso al final del curso.',
+              'Te presentamos recursos de apoyo para reforzar lo mostrado hasta el momento.',
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: 18,
@@ -114,7 +91,9 @@ class _Stage03InstructionPageState extends State<Stage03InstructionPage> {
       width: double.infinity,
       margin: EdgeInsets.symmetric(horizontal: 50, vertical: 50),
       child: ElevatedButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.pushNamed(context, 'stage_03/appliedcase');
+        },
         child: Text(
           'Comencemos',
           style: TextStyle(color: MyColors.primaryColorText_02),

@@ -65,7 +65,7 @@ class _Stage01Caso01PageState extends State<Stage01Caso01Page> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        imagenContent_01(),
+                        imagenContent_02(),
                         textContent(
                             'En la sala de espera de un aeropuerto, un vendedor de globos de helio notó que muchos de estos globos se soltaban involuntariamente de las manos de las personas. '),
                       ],
@@ -74,17 +74,16 @@ class _Stage01Caso01PageState extends State<Stage01Caso01Page> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         textContent(
-                            'Estos globos se elevaban en el techo, muy alto. El vendedor quiere aprovechar por las noches para recuperar los globos del techo y reevenderlos.'),
-                        imagenContent_02(),
+                            'Estos globos se elevaban en el techo, muy alto.\n\nEl vendedor quiere aprovechar por las noches para recuperar los globos del techo y reevenderlos.'),
+                        imagenContent_01(),
                       ],
                     ),
                     textTitle(),
                     textFormField(),
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      mainAxisAlignment: MainAxisAlignment.end,
                       children: [
-                        buttonCase('Atras'),
-                        buttonCase('Guardar'),
+                        buttonCase('Guardar >', 'stage_01/caso_02'),
                       ],
                     ),
                   ],
@@ -182,12 +181,14 @@ class _Stage01Caso01PageState extends State<Stage01Caso01Page> {
     );
   }
 
-  Widget buttonCase(String textButton) {
+  Widget buttonCase(String textButton, String textLink) {
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 0, vertical: 10),
       width: 150,
       child: ElevatedButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.pushNamed(context, textLink);
+        },
         child: Text(
           textButton,
           style: TextStyle(

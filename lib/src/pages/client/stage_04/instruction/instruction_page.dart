@@ -47,9 +47,9 @@ class _Stage04InstructionPageState extends State<Stage04InstructionPage> {
   Widget imageBanner() {
     return Container(
       margin: EdgeInsets.only(
-          top: 100, bottom: MediaQuery.of(context).size.height * 0.05),
+          top: 160, bottom: MediaQuery.of(context).size.height * 0.1),
       child: Image.asset(
-        'assets/img/hello.png',
+        'assets/img/instrucciones.png',
         width: 300,
       ),
     );
@@ -70,7 +70,7 @@ class _Stage04InstructionPageState extends State<Stage04InstructionPage> {
         children: [
           Container(
             child: Text(
-              'Gracias por estar aquí.',
+              'Esta es la etapa de evaluación.',
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: 18,
@@ -83,7 +83,7 @@ class _Stage04InstructionPageState extends State<Stage04InstructionPage> {
           ),
           Container(
             child: Text(
-              'Antes de comenzar, necesitamos que llenes algunas preguntas.',
+              'Como en la Etapa 1, te presentamos casos donde podrás aplicar lo aprendido. ',
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: 18,
@@ -96,7 +96,7 @@ class _Stage04InstructionPageState extends State<Stage04InstructionPage> {
           ),
           Container(
             child: Text(
-              'Esto es con el fin de medir el progreso al final del curso.',
+              'Además,  deberás resolver los cuestionarios marcando la opción más conveniente.',
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: 18,
@@ -114,7 +114,9 @@ class _Stage04InstructionPageState extends State<Stage04InstructionPage> {
       width: double.infinity,
       margin: EdgeInsets.symmetric(horizontal: 50, vertical: 50),
       child: ElevatedButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.pushNamed(context, 'stage_04/menucasesurvey');
+        },
         child: Text(
           'Comencemos',
           style: TextStyle(color: MyColors.primaryColorText_02),

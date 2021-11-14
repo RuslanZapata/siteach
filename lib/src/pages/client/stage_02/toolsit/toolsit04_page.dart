@@ -87,7 +87,9 @@ class _Stage02ToolSIT04PageState extends State<Stage02ToolSIT04Page> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.pushNamed(context, 'stage_02/toolsit_05');
+        },
         tooltip: 'Increment',
         child: Icon(
           Icons.arrow_forward_ios,

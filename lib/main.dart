@@ -5,7 +5,12 @@ import 'package:siteach/src/pages/client/initiationSIT/instruction/instruction_p
 import 'package:siteach/src/pages/client/initiationSIT/entrancesurvey/entrancesurvey01_page.dart';
 import 'package:siteach/src/pages/client/initiationSIT/entrancesurvey/entrancesurvey02_page.dart';
 import 'package:siteach/src/pages/client/initiationSIT/entrancesurvey/entrancesurvey03_page.dart';
+import 'package:siteach/src/pages/client/menu/menumedios_page.dart';
+import 'package:siteach/src/pages/client/menu/menuprincipios_page.dart';
 import 'package:siteach/src/pages/client/menuclient/menuclient_page.dart';
+import 'package:siteach/src/pages/client/menu/menu_page.dart';
+import 'package:siteach/src/pages/client/menu/menusit_page.dart';
+import 'package:siteach/src/pages/client/menu/menutools_page.dart';
 // stage_01
 import 'package:siteach/src/pages/client/stage_01/instruction/instruction_page.dart';
 import 'package:siteach/src/pages/client/stage_01/caso/case01_page.dart';
@@ -23,12 +28,15 @@ import 'package:siteach/src/pages/client/stage_02/whatsit/whatsit_page.dart';
 import 'package:siteach/src/pages/client/stage_03/appliedcase/appliedcase_page.dart';
 // stage_03
 import 'package:siteach/src/pages/client/stage_03/instruction/instruction_page.dart';
+import 'package:siteach/src/pages/client/stage_04/survey/survey01_page.dart';
 // stage_04
 import 'package:siteach/src/pages/client/stage_04/instruction/instruction_page.dart';
 import 'package:siteach/src/pages/client/stage_04/caso/case01_page.dart';
 import 'package:siteach/src/pages/client/stage_04/caso/case02_page.dart';
 import 'package:siteach/src/pages/client/stage_04/caso/case03_page.dart';
 import 'package:siteach/src/pages/client/stage_04/menucasesurvey/menucasesurvey_page.dart';
+import 'package:siteach/src/pages/client/stage_04/survey/survey02_page.dart';
+import 'package:siteach/src/pages/client/stage_04/survey/survey03_page.dart';
 import 'package:siteach/src/pages/client/stage_04/toolsit/toolsit01_page.dart';
 import 'package:siteach/src/pages/client/stage_04/toolsit/toolsit02_page.dart';
 import 'package:siteach/src/pages/client/stage_04/toolsit/toolsit03_page.dart';
@@ -60,11 +68,17 @@ class _MyAppState extends State<MyApp> {
       theme: ThemeData(
         primaryColor: MyColors.primaryColor,
       ),
-      initialRoute: 'stage_03/appliedcase',
+      initialRoute: 'menu',
       routes: {
         // Login y Sign Up
         'login': (BuildContext context) => LoginPage(),
         'signup': (BuildContext context) => SignUpPage(),
+        // Menu
+        'menu': (BuildContext context) => MenuPage(),
+        'menusit': (BuildContext context) => MenuSITPage(),
+        'menutools': (BuildContext context) => MenuToolsPage(),
+        'menuprincipios': (BuildContext context) => MenuPrincipiosPage(),
+        'menumedios': (BuildContext context) => MenuMediosPage(),
         // Menu Client
         'menuclient': (BuildContext context) => MenuClientPage(),
         // initiationSIT
@@ -105,6 +119,9 @@ class _MyAppState extends State<MyApp> {
         'stage_04/caso_01': (BuildContext context) => Stage04Caso01Page(),
         'stage_04/caso_02': (BuildContext context) => Stage04Caso02Page(),
         'stage_04/caso_03': (BuildContext context) => Stage04Caso03Page(),
+        'stage_04/survey_01': (BuildContext context) => Stage04Survey01Page(),
+        'stage_04/survey_02': (BuildContext context) => Stage04Survey02Page(),
+        'stage_04/survey_03': (BuildContext context) => Stage04Survey03Page(),
         'stage_04/toolsit_01': (BuildContext context) => Stage04ToolSIT01Page(),
         'stage_04/toolsit_02': (BuildContext context) => Stage04ToolSIT02Page(),
         'stage_04/toolsit_03': (BuildContext context) => Stage04ToolSIT03Page(),

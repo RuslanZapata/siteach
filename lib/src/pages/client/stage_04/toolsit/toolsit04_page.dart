@@ -207,7 +207,9 @@ class _Stage04ToolSIT04PageState extends State<Stage04ToolSIT04Page> {
       margin: EdgeInsets.symmetric(horizontal: 0, vertical: 10),
       width: 150,
       child: ElevatedButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.pushNamed(context, 'stage_04/toolsit_05');
+        },
         child: Text(
           textButton,
           style: TextStyle(

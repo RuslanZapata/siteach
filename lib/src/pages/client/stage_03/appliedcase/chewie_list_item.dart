@@ -40,15 +40,15 @@ class _ChewieListItemState extends State<ChewieListItem> {
     super.initState();
     _chewieController = ChewieController(
         videoPlayerController: widget.videoPlayerController,
-        aspectRatio: widget.videoPlayerController.value.aspectRatio,
+        aspectRatio: 4 / 3,
         autoInitialize: true,
         looping: widget.looping,
         errorBuilder: (context, errorMessage) {
-          return Center(
+          return Container(
             child: Text(
               errorMessage,
               style: TextStyle(
-                color: Colors.white,
+                color: Colors.black,
               ),
             ),
           );
