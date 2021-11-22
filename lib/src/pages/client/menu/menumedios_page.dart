@@ -55,7 +55,7 @@ class _MenuMediosPageState extends State<MenuMediosPage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            buttonCase('Etapa 1: ¿Qué harías tú?'),
+            buttonCase('cases'),
             buttonVideos('Etapa 2: ¡Aprendamos un poco!'),
           ],
         ),
@@ -146,7 +146,7 @@ class _MenuMediosPageState extends State<MenuMediosPage> {
           ),
         ),
         onPressed: () {
-          print('Pressed');
+          Navigator.pushNamed(context, textLink);
         },
         style: ElevatedButton.styleFrom(
           primary: MyColors.primaryColorBackground_11,

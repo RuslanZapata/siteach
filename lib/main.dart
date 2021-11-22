@@ -1,12 +1,25 @@
 // ignore_for_file: prefer_const_constructors
 import 'package:flutter/material.dart';
+import 'package:siteach/src/pages/case/page/home_page.dart';
+import 'package:siteach/src/pages/client/games/home_screen.dart';
 // initiationSIT
 import 'package:siteach/src/pages/client/initiationSIT/instruction/instruction_page.dart';
 import 'package:siteach/src/pages/client/initiationSIT/entrancesurvey/entrancesurvey01_page.dart';
 import 'package:siteach/src/pages/client/initiationSIT/entrancesurvey/entrancesurvey02_page.dart';
 import 'package:siteach/src/pages/client/initiationSIT/entrancesurvey/entrancesurvey03_page.dart';
+import 'package:siteach/src/pages/client/menu/dependencia_page.dart';
+import 'package:siteach/src/pages/client/menu/dependenciaejemplo_page.dart';
+import 'package:siteach/src/pages/client/menu/division_page.dart';
+import 'package:siteach/src/pages/client/menu/divisionejemplo_page.dart';
 import 'package:siteach/src/pages/client/menu/menumedios_page.dart';
 import 'package:siteach/src/pages/client/menu/menuprincipios_page.dart';
+import 'package:siteach/src/pages/client/menu/multiplicacion_page.dart';
+import 'package:siteach/src/pages/client/menu/multiplicacionejemplo_page.dart';
+import 'package:siteach/src/pages/client/menu/prueba_page.dart';
+import 'package:siteach/src/pages/client/menu/sustraccion_page.dart';
+import 'package:siteach/src/pages/client/menu/sustraccionejemplo_page.dart';
+import 'package:siteach/src/pages/client/menu/unificacion_page.dart';
+import 'package:siteach/src/pages/client/menu/unificacionejemplo_page.dart';
 import 'package:siteach/src/pages/client/menuclient/menuclient_page.dart';
 import 'package:siteach/src/pages/client/menu/menu_page.dart';
 import 'package:siteach/src/pages/client/menu/menusit_page.dart';
@@ -46,7 +59,7 @@ import 'package:siteach/src/pages/client/stage_04/toolsit/toolsit05_page.dart';
 import 'package:siteach/src/pages/login/login_page.dart';
 import 'package:siteach/src/pages/signup/signup_page.dart';
 // Utils
-import 'package:siteach/src/utils/my_colors.dart';
+// import 'package:siteach/src/utils/my_colors.dart';
 
 void main() {
   runApp(MyApp());
@@ -65,9 +78,9 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'SITEACH',
-      theme: ThemeData(
-        primaryColor: MyColors.primaryColor,
-      ),
+      // theme: ThemeData(
+      //   primaryColor: MyColors.primaryColor,
+      // ),
       initialRoute: 'menu',
       routes: {
         // Login y Sign Up
@@ -79,6 +92,21 @@ class _MyAppState extends State<MyApp> {
         'menutools': (BuildContext context) => MenuToolsPage(),
         'menuprincipios': (BuildContext context) => MenuPrincipiosPage(),
         'menumedios': (BuildContext context) => MenuMediosPage(),
+        'prueba': (BuildContext context) => PruebaPage(),
+        'unificacion': (BuildContext context) => UnificacionPage(),
+        'unificacionejemplo': (BuildContext context) => OnboardingUnificacion(),
+        'multiplicacion': (BuildContext context) => MultiplicacionPage(),
+        'multiplicacionejemplo': (BuildContext context) =>
+            OnboardingMultiplicacion(),
+        'sustraccion': (BuildContext context) => SustraccionPage(),
+        'sustraccionejemplo': (BuildContext context) => OnboardingSustraccion(),
+        'division': (BuildContext context) => DivisionPage(),
+        'divisionejemplo': (BuildContext context) => OnboardingDivision(),
+        'dependencia': (BuildContext context) => DependenciaPage(),
+        'dependenciaejemplo': (BuildContext context) => OnboardingDependencia(),
+        'screen': (BuildContext context) => home_screen(),
+        'cases': (BuildContext context) => HomePage(),
+
         // Menu Client
         'menuclient': (BuildContext context) => MenuClientPage(),
         // initiationSIT

@@ -148,7 +148,7 @@ class _MenuSITPageState extends State<MenuSITPage> {
           ),
         ),
         onPressed: () {
-          Navigator.pushNamed(context, 'stage_02/whatsit');
+          Navigator.pushNamed(context, 'prueba');
         },
         style: ElevatedButton.styleFrom(
           primary: MyColors.primaryColorBackground_09,

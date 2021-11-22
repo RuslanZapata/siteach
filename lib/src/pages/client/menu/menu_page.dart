@@ -57,7 +57,7 @@ class _MenuPageState extends State<MenuPage> {
           children: [
             buttonSIT('Etapa 1: ¿Qué harías tú?'),
             buttonMedia('Etapa 2: ¡Aprendamos un poco!'),
-            buttonGamer('Etapa 3: Recursos de apoyo'),
+            buttonGamer('screen'),
             buttonReferences('Etapa 4: Evalúate'),
           ],
         ),
@@ -134,13 +134,13 @@ class _MenuPageState extends State<MenuPage> {
       width: double.infinity,
       margin: EdgeInsets.symmetric(horizontal: 40, vertical: 0),
       child: ElevatedButton.icon(
-        icon: Icon(
+        label: Icon(
           Icons.cloud,
           color: MyColors.primaryColorBackground_07,
           size: 36.0,
         ),
-        label: Text(
-          'SIT',
+        icon: Text(
+          'SIT   ',
           style: TextStyle(
             fontSize: 32,
             fontFamily: 'Rationale',
@@ -166,13 +166,13 @@ class _MenuPageState extends State<MenuPage> {
       width: double.infinity,
       margin: EdgeInsets.symmetric(horizontal: 40, vertical: 0),
       child: ElevatedButton.icon(
-        icon: Icon(
+        label: Icon(
           Icons.perm_media,
           color: MyColors.primaryColorBackground_07,
           size: 36.0,
         ),
-        label: Text(
-          'MEDIA',
+        icon: Text(
+          'MEDIA   ',
           style: TextStyle(
             fontSize: 32,
             fontFamily: 'Rationale',
@@ -198,13 +198,13 @@ class _MenuPageState extends State<MenuPage> {
       width: double.infinity,
       margin: EdgeInsets.symmetric(horizontal: 40, vertical: 0),
       child: ElevatedButton.icon(
-        icon: Icon(
-          Icons.videogame_asset,
+        label: Icon(
+          Icons.sports_esports,
           color: MyColors.primaryColorBackground_07,
           size: 36.0,
         ),
-        label: Text(
-          'JUEGA',
+        icon: Text(
+          'JUEGA   ',
           style: TextStyle(
             fontSize: 32,
             fontFamily: 'Rationale',
@@ -212,7 +212,7 @@ class _MenuPageState extends State<MenuPage> {
           ),
         ),
         onPressed: () {
-          print('Pressed');
+          Navigator.pushNamed(context, textLink);
         },
         style: ElevatedButton.styleFrom(
           primary: MyColors.primaryColorBackground_08,
@@ -230,13 +230,13 @@ class _MenuPageState extends State<MenuPage> {
       width: double.infinity,
       margin: EdgeInsets.symmetric(horizontal: 40, vertical: 0),
       child: ElevatedButton.icon(
-        icon: Icon(
+        label: Icon(
           Icons.article,
           color: MyColors.primaryColorBackground_07,
           size: 36.0,
         ),
-        label: Text(
-          'REFERENCIAS',
+        icon: Text(
+          'REFERENCIAS    ',
           style: TextStyle(
             fontSize: 32,
             fontFamily: 'Rationale',
@@ -244,7 +244,7 @@ class _MenuPageState extends State<MenuPage> {
           ),
         ),
         onPressed: () {
-          print('Pressed');
+          Navigator.pushNamed(context, 'prueba');
         },
         style: ElevatedButton.styleFrom(
           primary: MyColors.primaryColorBackground_08,

@@ -55,11 +55,11 @@ class _MenuToolsPageState extends State<MenuToolsPage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            buttonSIT('Etapa 1: ¿Qué harías tú?'),
-            buttonMedia('Etapa 2: ¡Aprendamos un poco!'),
-            buttonGamer('Etapa 3: Recursos de apoyo'),
-            buttonReferences('Etapa 4: Evalúate'),
-            buttonDependencia('Etapa 4: Evalúate')
+            buttonUnificacion('unificacion'),
+            buttonMultiplicacion('multiplicacion'),
+            buttonSustraccion('sustraccion'),
+            buttonDivision('division'),
+            buttonDependencia('dependencia')
           ],
         ),
       ),
@@ -78,70 +78,18 @@ class _MenuToolsPageState extends State<MenuToolsPage> {
     );
   }
 
-  Widget buttonSignUp(String textButton, String textLink) {
-    return Container(
-      width: double.infinity,
-      margin: EdgeInsets.symmetric(horizontal: 2, vertical: 0),
-      // child: ElevatedButton(
-      //   onPressed: () {
-      //     Navigator.pushNamed(context, textLink);
-      //   },
-      //   child: Text(
-      //     textButton,
-      //     style: TextStyle(
-      //       fontSize: 16,
-      //       fontFamily: 'Mulish',
-      //       color: MyColors.primaryColorText_02,
-      //     ),
-      //   ),
-      //   style: ElevatedButton.styleFrom(
-      //     primary: Colors.black.withOpacity(0.1),
-      //     shape: RoundedRectangleBorder(
-      //       borderRadius: BorderRadius.circular(30),
-      //     ),
-      //     padding: EdgeInsets.symmetric(vertical: 35),
-      //   ),
-      // ),
-      child: ElevatedButton.icon(
-        icon: Icon(
-          Icons.perm_media,
-          color: MyColors.primaryColorBackground_07,
-          size: 36.0,
-        ),
-        label: Text(
-          'Elevated Button',
-          style: TextStyle(
-            fontSize: 32,
-            fontFamily: 'Rationale',
-            color: MyColors.primaryColorBackground_07,
-          ),
-        ),
-        onPressed: () {
-          Navigator.pushNamed(context, 'menumedios');
-        },
-        style: ElevatedButton.styleFrom(
-          primary: MyColors.primaryColorBackground_10,
-          shape: new RoundedRectangleBorder(
-            borderRadius: new BorderRadius.circular(20.0),
-          ),
-          padding: EdgeInsets.symmetric(vertical: 25),
-        ),
-      ),
-    );
-  }
-
-  Widget buttonSIT(String textLink) {
+  Widget buttonUnificacion(String textLink) {
     return Container(
       width: double.infinity,
       margin: EdgeInsets.symmetric(horizontal: 40, vertical: 0),
       child: ElevatedButton.icon(
-        icon: Icon(
-          Icons.vpn_lock,
+        label: Icon(
+          Icons.add,
           color: MyColors.primaryColorBackground_07,
           size: 36.0,
         ),
-        label: Text(
-          'UNIFICACIÓN DE TAREAS',
+        icon: Text(
+          'UNIFICACIÓN DE TAREAS ',
           style: TextStyle(
             fontSize: 25,
             fontFamily: 'Rationale',
@@ -149,7 +97,7 @@ class _MenuToolsPageState extends State<MenuToolsPage> {
           ),
         ),
         onPressed: () {
-          Navigator.pushNamed(context, 'stage_02/toolsit_01');
+          Navigator.pushNamed(context, textLink);
         },
         style: ElevatedButton.styleFrom(
           primary: MyColors.primaryColorBackground_10,
@@ -162,18 +110,18 @@ class _MenuToolsPageState extends State<MenuToolsPage> {
     );
   }
 
-  Widget buttonMedia(String textLink) {
+  Widget buttonMultiplicacion(String textLink) {
     return Container(
       width: double.infinity,
       margin: EdgeInsets.symmetric(horizontal: 40, vertical: 0),
       child: ElevatedButton.icon(
-        icon: Icon(
+        label: Icon(
           Icons.clear,
           color: MyColors.primaryColorBackground_07,
           size: 36.0,
         ),
-        label: Text(
-          'MULTIPLICACIÓN',
+        icon: Text(
+          'MULTIPLICACIÓN ',
           style: TextStyle(
             fontSize: 25,
             fontFamily: 'Rationale',
@@ -181,7 +129,7 @@ class _MenuToolsPageState extends State<MenuToolsPage> {
           ),
         ),
         onPressed: () {
-          Navigator.pushNamed(context, 'stage_02/toolsit_02');
+          Navigator.pushNamed(context, textLink);
         },
         style: ElevatedButton.styleFrom(
           primary: MyColors.primaryColorBackground_10,
@@ -194,18 +142,18 @@ class _MenuToolsPageState extends State<MenuToolsPage> {
     );
   }
 
-  Widget buttonGamer(String textLink) {
+  Widget buttonSustraccion(String textLink) {
     return Container(
       width: double.infinity,
       margin: EdgeInsets.symmetric(horizontal: 40, vertical: 0),
       child: ElevatedButton.icon(
-        icon: Icon(
+        label: Icon(
           Icons.horizontal_rule,
           color: MyColors.primaryColorBackground_07,
           size: 36.0,
         ),
-        label: Text(
-          'SUSTRACCIÓN',
+        icon: Text(
+          'SUSTRACCIÓN ',
           style: TextStyle(
             fontSize: 25,
             fontFamily: 'Rationale',
@@ -213,7 +161,7 @@ class _MenuToolsPageState extends State<MenuToolsPage> {
           ),
         ),
         onPressed: () {
-          Navigator.pushNamed(context, 'stage_02/toolsit_04');
+          Navigator.pushNamed(context, textLink);
         },
         style: ElevatedButton.styleFrom(
           primary: MyColors.primaryColorBackground_10,
@@ -226,18 +174,18 @@ class _MenuToolsPageState extends State<MenuToolsPage> {
     );
   }
 
-  Widget buttonReferences(String textLink) {
+  Widget buttonDivision(String textLink) {
     return Container(
       width: double.infinity,
       margin: EdgeInsets.symmetric(horizontal: 40, vertical: 0),
       child: ElevatedButton.icon(
-        icon: Icon(
+        label: Icon(
           Icons.safety_divider,
           color: MyColors.primaryColorBackground_07,
           size: 36.0,
         ),
-        label: Text(
-          'DIVISIÓN',
+        icon: Text(
+          'DIVISIÓN ',
           style: TextStyle(
             fontSize: 25,
             fontFamily: 'Rationale',
@@ -245,7 +193,7 @@ class _MenuToolsPageState extends State<MenuToolsPage> {
           ),
         ),
         onPressed: () {
-          Navigator.pushNamed(context, 'stage_02/toolsit_03');
+          Navigator.pushNamed(context, textLink);
         },
         style: ElevatedButton.styleFrom(
           primary: MyColors.primaryColorBackground_10,
@@ -263,13 +211,13 @@ class _MenuToolsPageState extends State<MenuToolsPage> {
       width: double.infinity,
       margin: EdgeInsets.symmetric(horizontal: 40, vertical: 0),
       child: ElevatedButton.icon(
-        icon: Icon(
+        label: Icon(
           Icons.shuffle,
           color: MyColors.primaryColorBackground_07,
           size: 36.0,
         ),
-        label: Text(
-          'CAMBIO DE DEPENDENCIA',
+        icon: Text(
+          'CAMBIO DE DEPENDENCIA ',
           style: TextStyle(
             fontSize: 25,
             fontFamily: 'Rationale',
@@ -277,7 +225,7 @@ class _MenuToolsPageState extends State<MenuToolsPage> {
           ),
         ),
         onPressed: () {
-          Navigator.pushNamed(context, 'stage_02/toolsit_05');
+          Navigator.pushNamed(context, textLink);
         },
         style: ElevatedButton.styleFrom(
           primary: MyColors.primaryColorBackground_10,

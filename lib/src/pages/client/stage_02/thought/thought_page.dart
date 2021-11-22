@@ -96,6 +96,7 @@ class _Stage02ThoughtPageState extends State<Stage02ThoughtPage> {
         description,
         textAlign: TextAlign.justify,
         style: TextStyle(
+          color: MyColors.primaryColor,
           fontSize: 18,
           fontFamily: 'Puritan-Regular',
         ),
