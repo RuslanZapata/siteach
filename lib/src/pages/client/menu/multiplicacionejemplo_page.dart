@@ -49,7 +49,7 @@ class OnboardingMultiplicacion extends StatelessWidget {
       textColor: Color(0xFFFFFFFF),
 // ignore: prefer_const_constructors
       bgColor: Color(0xFF0086A4),
-      imgs: 'assets/img/razuradora.png',
+      imgs: 'assets/img/ejemplo/razuradora.png',
     ),
     PageData(
       icon: Icons.hdr_weak,
@@ -57,7 +57,7 @@ class OnboardingMultiplicacion extends StatelessWidget {
           'Una cámara profesional: se añaden diferentes lentes fotográficos para una mejor calidad de fotos.',
       textColor: Color(0xFF38424A),
       bgColor: Color(0xFFFAAA33),
-      imgs: 'assets/img/lentes.png',
+      imgs: 'assets/img/ejemplo/lentes.png',
     ),
     PageData(
       icon: Icons.bubble_chart,
@@ -65,7 +65,24 @@ class OnboardingMultiplicacion extends StatelessWidget {
           'Una bicicleta con ruedas auxiliares: agregamos 2 ruedas más para aquellos que aprenden a manejar por primera vez.',
       bgColor: Color(0xFF4A3843),
       textColor: Color(0xFFFAAA33),
-      imgs: 'assets/img/bicicleta.png',
+      imgs: 'assets/img/ejemplo/bicicleta.png',
+    ),
+    PageData(
+      icon: Icons.format_size,
+      title:
+          'Guitarra con doble mástil: Algunos artistas emplean guitarras de doble mástil para poder ir intercambiado entre seis y doce cuerdas de manera más rápida.',
+      textColor: Color(0xFFFFFFFF),
+// ignore: prefer_const_constructors
+      bgColor: Color(0xFF0086A4),
+      imgs: 'assets/img/ejemplo/GUITARRA.png',
+    ),
+    PageData(
+      icon: Icons.hdr_weak,
+      title:
+          'Timbre para restaurante: A este timbre de restaurante, se le añade más botones con distintas funciones: Para pedir la orden, para pedir la cuenta y para avisar que están desocupando la mesa.',
+      textColor: Color(0xFF38424A),
+      bgColor: Color(0xFFFAAA33),
+      imgs: 'assets/img/ejemplo/timbre_restaurant.png',
     ),
   ];
 
@@ -146,7 +163,7 @@ class PageCard extends StatelessWidget {
 
   Widget _buildPicture(
     BuildContext context, {
-    double size = 190,
+    double size = 240,
     // double iconSize = 170,
   }) {
     return Container(

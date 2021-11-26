@@ -49,7 +49,7 @@ class OnboardingSustraccion extends StatelessWidget {
       textColor: Color(0xFFFFFFFF),
 // ignore: prefer_const_constructors
       bgColor: Color(0xFF0086A4),
-      imgs: 'assets/img/telefono.png',
+      imgs: 'assets/img/ejemplo/telefono.png',
     ),
     PageData(
       icon: Icons.hdr_weak,
@@ -57,7 +57,7 @@ class OnboardingSustraccion extends StatelessWidget {
           'Rollo de papel higiénico sin tubo: Retiramos el tubo del producto que mantenía la estabilidad del rollo.',
       textColor: Color(0xFF38424A),
       bgColor: Color(0xFFFAAA33),
-      imgs: 'assets/img/papel_higienico.png',
+      imgs: 'assets/img/ejemplo/papel_higienico.png',
     ),
     PageData(
       icon: Icons.bubble_chart,
@@ -65,7 +65,24 @@ class OnboardingSustraccion extends StatelessWidget {
           'Placebo: En un inyectable, sustituímos el agente activo por un placebo.',
       bgColor: Color(0xFF4A3843),
       textColor: Color(0xFFFAAA33),
-      imgs: 'assets/img/placebo.png',
+      imgs: 'assets/img/ejemplo/placebo.png',
+    ),
+    PageData(
+      icon: Icons.format_size,
+      title:
+          'Neumáticos sin aire: Estos nuevos neumáticos están elaborados con fibra de vidrio y no necesitan aire, permitiendo así mayor flexibilidad, sostenibilidad en el ambiente y menor mantenimiento.',
+      textColor: Color(0xFFFFFFFF),
+// ignore: prefer_const_constructors
+      bgColor: Color(0xFF0086A4),
+      imgs: 'assets/img/ejemplo/llantas.png',
+    ),
+    PageData(
+      icon: Icons.hdr_weak,
+      title:
+          'PC All In One: Al quitarle el Case del CPU e integrarlo dentro del monitor, se convierte en una computadora All In One (Todo en uno).',
+      textColor: Color(0xFF38424A),
+      bgColor: Color(0xFFFAAA33),
+      imgs: 'assets/img/ejemplo/pc.png',
     ),
   ];
 
@@ -146,7 +163,7 @@ class PageCard extends StatelessWidget {
 
   Widget _buildPicture(
     BuildContext context, {
-    double size = 190,
+    double size = 240,
     // double iconSize = 170,
   }) {
     return Container(

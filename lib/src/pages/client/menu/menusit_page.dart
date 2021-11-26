@@ -28,36 +28,38 @@ class _MenuSITPageState extends State<MenuSITPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
-      appBar: AppBar(
-        title: Text(
-          'Menú SIT',
-          style: TextStyle(
-            fontFamily: 'Rationale',
-            fontSize: 28,
-            color: MyColors.primaryColorText_02,
-          ),
-        ),
-        backgroundColor: MyColors.primaryColor,
-      ),
+      // appBar: AppBar(
+      //   title: Text(
+      //     'Menú SIT',
+      //     style: TextStyle(
+      //       fontFamily: 'Rationale',
+      //       fontSize: 28,
+      //       color: MyColors.primaryColorText_02,
+      //     ),
+      //   ),
+      //   backgroundColor: MyColors.primaryColor,
+      // ),
       body: Container(
         padding: EdgeInsets.symmetric(horizontal: 15, vertical: 20),
         width: double.infinity,
         height: double.infinity,
         decoration: BoxDecoration(
-          color: Colors.grey,
-          image: DecorationImage(
-            image: AssetImage('assets/img/fondoSIT.png'),
-            alignment: Alignment.topCenter,
-            fit: BoxFit.fill,
-          ),
+          color: Color(0xFFF1F1F1),
+
+          // image: DecorationImage(
+          //   image: AssetImage('assets/img/fondoSIT.png'),
+          //   alignment: Alignment.topCenter,
+          //   fit: BoxFit.fill,
+          // ),
         ),
         // child: Container(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            buttonWhatSIT('Etapa 1: ¿Qué harías tú?'),
-            buttonTools('Etapa 2: ¡Aprendamos un poco!'),
-            buttonPrincipios('Etapa 3: Recursos de apoyo'),
+            buttonWhatSIT('sit'),
+            buttonPensamiento('pensamiento'),
+            buttonTools('menutools'),
+            buttonPrincipios('menuprincipios'),
             // buttonReferences('Etapa 4: Evalúate'),
           ],
         ),
@@ -77,69 +79,17 @@ class _MenuSITPageState extends State<MenuSITPage> {
     );
   }
 
-  Widget buttonSignUp(String textButton, String textLink) {
-    return Container(
-      width: double.infinity,
-      margin: EdgeInsets.symmetric(horizontal: 2, vertical: 0),
-      // child: ElevatedButton(
-      //   onPressed: () {
-      //     Navigator.pushNamed(context, textLink);
-      //   },
-      //   child: Text(
-      //     textButton,
-      //     style: TextStyle(
-      //       fontSize: 16,
-      //       fontFamily: 'Mulish',
-      //       color: MyColors.primaryColorText_02,
-      //     ),
-      //   ),
-      //   style: ElevatedButton.styleFrom(
-      //     primary: Colors.black.withOpacity(0.1),
-      //     shape: RoundedRectangleBorder(
-      //       borderRadius: BorderRadius.circular(30),
-      //     ),
-      //     padding: EdgeInsets.symmetric(vertical: 35),
-      //   ),
-      // ),
-      child: ElevatedButton.icon(
-        icon: Icon(
-          Icons.perm_media,
-          color: MyColors.primaryColorBackground_07,
-          size: 36.0,
-        ),
-        label: Text(
-          'Elevated Button',
-          style: TextStyle(
-            fontSize: 32,
-            fontFamily: 'Rationale',
-            color: MyColors.primaryColorBackground_07,
-          ),
-        ),
-        onPressed: () {
-          print('Pressed');
-        },
-        style: ElevatedButton.styleFrom(
-          primary: MyColors.primaryColorBackground_08,
-          shape: new RoundedRectangleBorder(
-            borderRadius: new BorderRadius.circular(20.0),
-          ),
-          padding: EdgeInsets.symmetric(vertical: 25),
-        ),
-      ),
-    );
-  }
-
   Widget buttonWhatSIT(String textLink) {
     return Container(
       width: double.infinity,
       margin: EdgeInsets.symmetric(horizontal: 40, vertical: 0),
       child: ElevatedButton.icon(
-        icon: Icon(
+        label: Icon(
           Icons.travel_explore,
           color: MyColors.primaryColorBackground_07,
-          size: 36.0,
+          size: 48.0,
         ),
-        label: Text(
+        icon: Text(
           '¿Que es SIT?',
           style: TextStyle(
             fontSize: 32,
@@ -148,14 +98,14 @@ class _MenuSITPageState extends State<MenuSITPage> {
           ),
         ),
         onPressed: () {
-          Navigator.pushNamed(context, 'prueba');
+          Navigator.pushNamed(context, textLink);
         },
         style: ElevatedButton.styleFrom(
-          primary: MyColors.primaryColorBackground_09,
+          primary: MyColors.primaryColorBackground_03,
           shape: new RoundedRectangleBorder(
             borderRadius: new BorderRadius.circular(20.0),
           ),
-          padding: EdgeInsets.symmetric(vertical: 25),
+          padding: EdgeInsets.symmetric(vertical: 16),
         ),
       ),
     );
@@ -166,12 +116,12 @@ class _MenuSITPageState extends State<MenuSITPage> {
       width: double.infinity,
       margin: EdgeInsets.symmetric(horizontal: 40, vertical: 0),
       child: ElevatedButton.icon(
-        icon: Icon(
+        label: Icon(
           Icons.construction,
           color: MyColors.primaryColorBackground_07,
-          size: 36.0,
+          size: 48.0,
         ),
-        label: Text(
+        icon: Text(
           'Herramientas',
           style: TextStyle(
             fontSize: 32,
@@ -180,14 +130,46 @@ class _MenuSITPageState extends State<MenuSITPage> {
           ),
         ),
         onPressed: () {
-          Navigator.pushNamed(context, 'menutools');
+          Navigator.pushNamed(context, textLink);
         },
         style: ElevatedButton.styleFrom(
-          primary: MyColors.primaryColorBackground_09,
+          primary: MyColors.primaryColorBackground_03,
           shape: new RoundedRectangleBorder(
             borderRadius: new BorderRadius.circular(20.0),
           ),
-          padding: EdgeInsets.symmetric(vertical: 25),
+          padding: EdgeInsets.symmetric(vertical: 16),
+        ),
+      ),
+    );
+  }
+
+  Widget buttonPensamiento(String textLink) {
+    return Container(
+      width: double.infinity,
+      margin: EdgeInsets.symmetric(horizontal: 40, vertical: 0),
+      child: ElevatedButton.icon(
+        label: Icon(
+          Icons.psychology,
+          color: MyColors.primaryColorBackground_07,
+          size: 48.0,
+        ),
+        icon: Text(
+          'Pensamiento',
+          style: TextStyle(
+            fontSize: 32,
+            fontFamily: 'Rationale',
+            color: MyColors.primaryColorBackground_07,
+          ),
+        ),
+        onPressed: () {
+          Navigator.pushNamed(context, textLink);
+        },
+        style: ElevatedButton.styleFrom(
+          primary: MyColors.primaryColorBackground_03,
+          shape: new RoundedRectangleBorder(
+            borderRadius: new BorderRadius.circular(20.0),
+          ),
+          padding: EdgeInsets.symmetric(vertical: 16),
         ),
       ),
     );
@@ -198,12 +180,12 @@ class _MenuSITPageState extends State<MenuSITPage> {
       width: double.infinity,
       margin: EdgeInsets.symmetric(horizontal: 40, vertical: 0),
       child: ElevatedButton.icon(
-        icon: Icon(
+        label: Icon(
           Icons.emoji_objects_outlined,
           color: MyColors.primaryColorBackground_07,
-          size: 36.0,
+          size: 48.0,
         ),
-        label: Text(
+        icon: Text(
           'Principios',
           style: TextStyle(
             fontSize: 32,
@@ -212,46 +194,14 @@ class _MenuSITPageState extends State<MenuSITPage> {
           ),
         ),
         onPressed: () {
-          Navigator.pushNamed(context, 'menuprincipios');
+          Navigator.pushNamed(context, textLink);
         },
         style: ElevatedButton.styleFrom(
-          primary: MyColors.primaryColorBackground_09,
+          primary: MyColors.primaryColorBackground_03,
           shape: new RoundedRectangleBorder(
             borderRadius: new BorderRadius.circular(20.0),
           ),
-          padding: EdgeInsets.symmetric(vertical: 25),
-        ),
-      ),
-    );
-  }
-
-  Widget buttonReferences(String textLink) {
-    return Container(
-      width: double.infinity,
-      margin: EdgeInsets.symmetric(horizontal: 40, vertical: 0),
-      child: ElevatedButton.icon(
-        icon: Icon(
-          Icons.article,
-          color: MyColors.primaryColorBackground_07,
-          size: 36.0,
-        ),
-        label: Text(
-          'REFERENCIAS',
-          style: TextStyle(
-            fontSize: 32,
-            fontFamily: 'Rationale',
-            color: MyColors.primaryColorBackground_07,
-          ),
-        ),
-        onPressed: () {
-          print('Pressed');
-        },
-        style: ElevatedButton.styleFrom(
-          primary: MyColors.primaryColorBackground_08,
-          shape: new RoundedRectangleBorder(
-            borderRadius: new BorderRadius.circular(20.0),
-          ),
-          padding: EdgeInsets.symmetric(vertical: 25),
+          padding: EdgeInsets.symmetric(vertical: 16),
         ),
       ),
     );

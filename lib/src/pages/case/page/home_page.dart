@@ -20,14 +20,14 @@ import 'package:siteach/src/pages/case/widget/locations_widget.dart';
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Scaffold(
-        backgroundColor: Colors.blueGrey,
+        backgroundColor: Color(0xFF22384A),
         appBar: buildAppBar(),
         body: LocationsWidget(),
       );
 
   Widget buildAppBar() => AppBar(
         elevation: 5,
-        backgroundColor: Colors.transparent,
+        backgroundColor: Color(0xFF7688A0),
         title: Text(
           'A continuación, te presentamos\nalgunos casos prácticos:',
           textAlign: TextAlign.center,

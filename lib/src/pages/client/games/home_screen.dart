@@ -96,7 +96,7 @@ class _home_screenState extends State<home_screen> {
   Widget build(BuildContext context) {
     if (items.isEmpty) gameOver = true;
     return Scaffold(
-      backgroundColor: Color(0xff38424A), //fondo de pantalla
+      backgroundColor: Color(0xFF22384A), //fondo de pantalla
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
@@ -151,7 +151,7 @@ class _home_screenState extends State<home_screen> {
                             childWhenDragging: CircleAvatar(
                               backgroundColor: Colors.white,
                               backgroundImage: AssetImage(item.img),
-                              radius: 65,
+                              radius: 100,
                             ),
                             feedback: CircleAvatar(
                               backgroundColor: Colors.white,

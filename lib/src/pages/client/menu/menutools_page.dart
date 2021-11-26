@@ -28,28 +28,23 @@ class _MenuToolsPageState extends State<MenuToolsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
-      appBar: AppBar(
-        title: Text(
-          'Menú Herramientas',
-          style: TextStyle(
-            fontFamily: 'Rationale',
-            fontSize: 28,
-            color: MyColors.primaryColorText_02,
-          ),
-        ),
-        backgroundColor: MyColors.primaryColor,
-      ),
+      // appBar: AppBar(
+      //   title: Text(
+      //     'Menú Herramientas',
+      //     style: TextStyle(
+      //       fontFamily: 'Rationale',
+      //       fontSize: 28,
+      //       color: MyColors.primaryColorText_02,
+      //     ),
+      //   ),
+      //   backgroundColor: MyColors.primaryColor,
+      // ),
       body: Container(
         padding: EdgeInsets.symmetric(horizontal: 15, vertical: 20),
         width: double.infinity,
         height: double.infinity,
         decoration: BoxDecoration(
-          color: Colors.grey,
-          image: DecorationImage(
-            image: AssetImage('assets/img/fondoHerramientas.png'),
-            alignment: Alignment.topCenter,
-            fit: BoxFit.fill,
-          ),
+          color: Color(0xFFF1F1F1),
         ),
         // child: Container(
         child: Column(
@@ -66,18 +61,6 @@ class _MenuToolsPageState extends State<MenuToolsPage> {
     );
   }
 
-  Widget imageBanner() {
-    return Container(
-      // padding: EdgeInsets.only(left: 70, right: 70),
-      width: 250,
-      child: Image.asset(
-        'assets/img/sitimg.png',
-        width: double.infinity,
-        // width: 300,
-      ),
-    );
-  }
-
   Widget buttonUnificacion(String textLink) {
     return Container(
       width: double.infinity,
@@ -86,7 +69,7 @@ class _MenuToolsPageState extends State<MenuToolsPage> {
         label: Icon(
           Icons.add,
           color: MyColors.primaryColorBackground_07,
-          size: 36.0,
+          size: 48.0,
         ),
         icon: Text(
           'UNIFICACIÓN DE TAREAS ',
@@ -100,11 +83,11 @@ class _MenuToolsPageState extends State<MenuToolsPage> {
           Navigator.pushNamed(context, textLink);
         },
         style: ElevatedButton.styleFrom(
-          primary: MyColors.primaryColorBackground_10,
+          primary: MyColors.primaryColor,
           shape: new RoundedRectangleBorder(
             borderRadius: new BorderRadius.circular(20.0),
           ),
-          padding: EdgeInsets.symmetric(vertical: 25),
+          padding: EdgeInsets.symmetric(vertical: 16),
         ),
       ),
     );
@@ -118,7 +101,7 @@ class _MenuToolsPageState extends State<MenuToolsPage> {
         label: Icon(
           Icons.clear,
           color: MyColors.primaryColorBackground_07,
-          size: 36.0,
+          size: 48.0,
         ),
         icon: Text(
           'MULTIPLICACIÓN ',
@@ -132,11 +115,11 @@ class _MenuToolsPageState extends State<MenuToolsPage> {
           Navigator.pushNamed(context, textLink);
         },
         style: ElevatedButton.styleFrom(
-          primary: MyColors.primaryColorBackground_10,
+          primary: MyColors.primaryColor,
           shape: new RoundedRectangleBorder(
             borderRadius: new BorderRadius.circular(20.0),
           ),
-          padding: EdgeInsets.symmetric(vertical: 25),
+          padding: EdgeInsets.symmetric(vertical: 16),
         ),
       ),
     );
@@ -150,7 +133,7 @@ class _MenuToolsPageState extends State<MenuToolsPage> {
         label: Icon(
           Icons.horizontal_rule,
           color: MyColors.primaryColorBackground_07,
-          size: 36.0,
+          size: 48.0,
         ),
         icon: Text(
           'SUSTRACCIÓN ',
@@ -164,11 +147,11 @@ class _MenuToolsPageState extends State<MenuToolsPage> {
           Navigator.pushNamed(context, textLink);
         },
         style: ElevatedButton.styleFrom(
-          primary: MyColors.primaryColorBackground_10,
+          primary: MyColors.primaryColor,
           shape: new RoundedRectangleBorder(
             borderRadius: new BorderRadius.circular(20.0),
           ),
-          padding: EdgeInsets.symmetric(vertical: 25),
+          padding: EdgeInsets.symmetric(vertical: 16),
         ),
       ),
     );
@@ -182,7 +165,7 @@ class _MenuToolsPageState extends State<MenuToolsPage> {
         label: Icon(
           Icons.safety_divider,
           color: MyColors.primaryColorBackground_07,
-          size: 36.0,
+          size: 48.0,
         ),
         icon: Text(
           'DIVISIÓN ',
@@ -196,11 +179,11 @@ class _MenuToolsPageState extends State<MenuToolsPage> {
           Navigator.pushNamed(context, textLink);
         },
         style: ElevatedButton.styleFrom(
-          primary: MyColors.primaryColorBackground_10,
+          primary: MyColors.primaryColor,
           shape: new RoundedRectangleBorder(
             borderRadius: new BorderRadius.circular(20.0),
           ),
-          padding: EdgeInsets.symmetric(vertical: 25),
+          padding: EdgeInsets.symmetric(vertical: 16),
         ),
       ),
     );
@@ -214,7 +197,7 @@ class _MenuToolsPageState extends State<MenuToolsPage> {
         label: Icon(
           Icons.shuffle,
           color: MyColors.primaryColorBackground_07,
-          size: 36.0,
+          size: 48.0,
         ),
         icon: Text(
           'CAMBIO DE DEPENDENCIA ',
@@ -228,11 +211,11 @@ class _MenuToolsPageState extends State<MenuToolsPage> {
           Navigator.pushNamed(context, textLink);
         },
         style: ElevatedButton.styleFrom(
-          primary: MyColors.primaryColorBackground_10,
+          primary: MyColors.primaryColor,
           shape: new RoundedRectangleBorder(
             borderRadius: new BorderRadius.circular(20.0),
           ),
-          padding: EdgeInsets.symmetric(vertical: 25),
+          padding: EdgeInsets.symmetric(vertical: 16),
         ),
       ),
     );

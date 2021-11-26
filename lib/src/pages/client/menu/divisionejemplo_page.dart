@@ -49,7 +49,7 @@ class OnboardingDivision extends StatelessWidget {
       textColor: Color(0xFFFFFFFF),
 // ignore: prefer_const_constructors
       bgColor: Color(0xFF0086A4),
-      imgs: 'assets/img/gafas_02.png',
+      imgs: 'assets/img/ejemplo/gafas_02.png',
     ),
     PageData(
       icon: Icons.hdr_weak,
@@ -57,7 +57,7 @@ class OnboardingDivision extends StatelessWidget {
           'Diferentes sabores de frituras: cambiamos los saborizantes de las frituras y así tenemos un producto con distintos sabores.',
       textColor: Color(0xFF38424A),
       bgColor: Color(0xFFFAAA33),
-      imgs: 'assets/img/frituras.png',
+      imgs: 'assets/img/ejemplo/frituras.png',
     ),
     PageData(
       icon: Icons.bubble_chart,
@@ -65,7 +65,24 @@ class OnboardingDivision extends StatelessWidget {
           'Método de pago diferido: Dividimos el método de pago en distintos momentos, así se puede comprar primero y pagar en otro momento.',
       bgColor: Color(0xFF4A3843),
       textColor: Color(0xFFFAAA33),
-      imgs: 'assets/img/credito.png',
+      imgs: 'assets/img/ejemplo/credito.png',
+    ),
+    PageData(
+      icon: Icons.format_size,
+      title:
+          'Sandwichera con placas intercambiables: Al tener diferentes placas, se obtiene diferentes tipos de panes con el mismo producto.',
+      textColor: Color(0xFFFFFFFF),
+// ignore: prefer_const_constructors
+      bgColor: Color(0xFF0086A4),
+      imgs: 'assets/img/ejemplo/sandwichera.png',
+    ),
+    PageData(
+      icon: Icons.hdr_weak,
+      title:
+          'Reloj con correas intercambiables: Con esta opción, se tiene un solo reloj que luce diferente para cada ocasión.',
+      textColor: Color(0xFF38424A),
+      bgColor: Color(0xFFFAAA33),
+      imgs: 'assets/img/ejemplo/reloj_correas.png',
     ),
   ];
 
@@ -146,7 +163,7 @@ class PageCard extends StatelessWidget {
 
   Widget _buildPicture(
     BuildContext context, {
-    double size = 190,
+    double size = 240,
     // double iconSize = 170,
   }) {
     return Container(

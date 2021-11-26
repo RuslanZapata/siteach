@@ -31,10 +31,13 @@ dependencies:
     sdk: flutter
   http: ^0.13.3
   shared_preferences: ^2.0.5
-  video_player: ^1.0.1
   elastic_drawer: ^2.0.1
   concentric_transition: ^1.0.1
+  url_launcher: ^6.0.15
   audioplayers: ^0.20.1
+  animated_splash_screen: ^1.1.0
+  bottom_navy_bar: ^6.0.0
+  # video_player: ^1.0.1
 
 
 
@@ -73,7 +76,9 @@ flutter:
   assets:
     - assets/img/
     - assets/img/case/
+    - assets/img/ejemplo/
     - assets/img/game/
+    - assets/img/logo/
     - assets/video/
     - assets/audio/
 

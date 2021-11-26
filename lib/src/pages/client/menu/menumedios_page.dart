@@ -28,35 +28,19 @@ class _MenuMediosPageState extends State<MenuMediosPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
-      appBar: AppBar(
-        title: Text(
-          'Menú Medios',
-          style: TextStyle(
-            fontFamily: 'Rationale',
-            fontSize: 28,
-            color: MyColors.primaryColorText_02,
-          ),
-        ),
-        backgroundColor: MyColors.primaryColor,
-      ),
       body: Container(
         padding: EdgeInsets.symmetric(horizontal: 15, vertical: 20),
         width: double.infinity,
         height: double.infinity,
         decoration: BoxDecoration(
-          color: Colors.grey,
-          image: DecorationImage(
-            image: AssetImage('assets/img/fondoMedios.png'),
-            alignment: Alignment.topCenter,
-            fit: BoxFit.fill,
-          ),
+          color: Color(0xFFF1F1F1),
         ),
         // child: Container(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             buttonCase('cases'),
-            buttonVideos('Etapa 2: ¡Aprendamos un poco!'),
+            buttonVideos('menuvideo'),
           ],
         ),
       ),
@@ -75,69 +59,17 @@ class _MenuMediosPageState extends State<MenuMediosPage> {
     );
   }
 
-  Widget buttonSignUp(String textButton, String textLink) {
-    return Container(
-      width: double.infinity,
-      margin: EdgeInsets.symmetric(horizontal: 2, vertical: 0),
-      // child: ElevatedButton(
-      //   onPressed: () {
-      //     Navigator.pushNamed(context, textLink);
-      //   },
-      //   child: Text(
-      //     textButton,
-      //     style: TextStyle(
-      //       fontSize: 16,
-      //       fontFamily: 'Mulish',
-      //       color: MyColors.primaryColorText_02,
-      //     ),
-      //   ),
-      //   style: ElevatedButton.styleFrom(
-      //     primary: Colors.black.withOpacity(0.1),
-      //     shape: RoundedRectangleBorder(
-      //       borderRadius: BorderRadius.circular(30),
-      //     ),
-      //     padding: EdgeInsets.symmetric(vertical: 35),
-      //   ),
-      // ),
-      child: ElevatedButton.icon(
-        icon: Icon(
-          Icons.perm_media,
-          color: MyColors.primaryColorBackground_07,
-          size: 36.0,
-        ),
-        label: Text(
-          'Elevated Button',
-          style: TextStyle(
-            fontSize: 32,
-            fontFamily: 'Rationale',
-            color: MyColors.primaryColorBackground_07,
-          ),
-        ),
-        onPressed: () {
-          print('Pressed');
-        },
-        style: ElevatedButton.styleFrom(
-          primary: MyColors.primaryColorBackground_11,
-          shape: new RoundedRectangleBorder(
-            borderRadius: new BorderRadius.circular(20.0),
-          ),
-          padding: EdgeInsets.symmetric(vertical: 25),
-        ),
-      ),
-    );
-  }
-
   Widget buttonCase(String textLink) {
     return Container(
       width: double.infinity,
       margin: EdgeInsets.symmetric(horizontal: 40, vertical: 0),
       child: ElevatedButton.icon(
-        icon: Icon(
+        label: Icon(
           Icons.library_books,
           color: MyColors.primaryColorBackground_07,
-          size: 36.0,
+          size: 48.0,
         ),
-        label: Text(
+        icon: Text(
           'CASOS',
           style: TextStyle(
             fontSize: 32,
@@ -149,11 +81,11 @@ class _MenuMediosPageState extends State<MenuMediosPage> {
           Navigator.pushNamed(context, textLink);
         },
         style: ElevatedButton.styleFrom(
-          primary: MyColors.primaryColorBackground_11,
+          primary: MyColors.primaryColorBackground_03,
           shape: new RoundedRectangleBorder(
             borderRadius: new BorderRadius.circular(20.0),
           ),
-          padding: EdgeInsets.symmetric(vertical: 25),
+          padding: EdgeInsets.symmetric(vertical: 16),
         ),
       ),
     );
@@ -164,12 +96,12 @@ class _MenuMediosPageState extends State<MenuMediosPage> {
       width: double.infinity,
       margin: EdgeInsets.symmetric(horizontal: 40, vertical: 0),
       child: ElevatedButton.icon(
-        icon: Icon(
+        label: Icon(
           Icons.video_library,
           color: MyColors.primaryColorBackground_07,
-          size: 36.0,
+          size: 48.0,
         ),
-        label: Text(
+        icon: Text(
           'VIDEOS',
           style: TextStyle(
             fontSize: 32,
@@ -178,14 +110,14 @@ class _MenuMediosPageState extends State<MenuMediosPage> {
           ),
         ),
         onPressed: () {
-          print('Pressed');
+          Navigator.pushNamed(context, textLink);
         },
         style: ElevatedButton.styleFrom(
-          primary: MyColors.primaryColorBackground_11,
+          primary: MyColors.primaryColorBackground_03,
           shape: new RoundedRectangleBorder(
             borderRadius: new BorderRadius.circular(20.0),
           ),
-          padding: EdgeInsets.symmetric(vertical: 25),
+          padding: EdgeInsets.symmetric(vertical: 16),
         ),
       ),
     );

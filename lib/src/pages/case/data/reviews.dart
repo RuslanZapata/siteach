@@ -14,7 +14,7 @@ class Reviews {
       username: 'Solución inventiva',
       urlImage: 'assets/img/case/answer.png',
       description:
-          'Un vendedor de globos usa un globo con un cordón largo para recuperar los globos apilados en el techo alto.',
+          'Una solución inventiva puede ser que el vendedor de globos use un globo con un cordón largo para recuperar los globos apilados en el techo alto y así, revenderlos.\n\nEn este caso se utilizó la herramienta de multiplicación debido a que se añadió un elemento ligeramente modificado como es el caso del cordón del globo.',
     ),
   ];
   static List<Review> allReviews2 = [
@@ -30,7 +30,7 @@ class Reviews {
       username: 'Solución inventiva',
       urlImage: 'assets/img/case/answer.png',
       description:
-          'Una solución innovadora al problema de los peces es agregar a la piscina un tiburón bebé, que es simplemente otro tipo de pez que se encuentra a menudo en las redes de los pescadores.',
+          'Una solución innovadora al problema de los peces es agregar a la piscina un tiburón bebé, que es simplemente otro tipo de pez que se encuentra a menudo en las redes de los pescadores.\nEn este caso se utilizó la herramienta de multiplicación debido a que se añadió un elemento ligeramente modificado como es el caso del pez.',
     ),
   ];
   static List<Review> allReviews3 = [
@@ -42,11 +42,11 @@ class Reviews {
           'El Faro de Alejandría fue construido en el siglo III a. C. y se considera una de las Siete Maravillas del Mundo. Sostratus, el arquitecto del faro, quería que su nombre se perpetrara en el diseño del faro.\n\nEsto no fue permitido por Ptolomeo II, el rey de Egipto, quien prohibió que su nombre fuera grabado en la enorme estructura.\n\nEntonces, ¿Cómo podría el arquitecto solucionar este problema?',
     ),
     Review(
-      date: 'Multiplicación',
+      date: 'Cambio de dependencia',
       username: 'Solución inventiva',
       urlImage: 'assets/img/case/answer.png',
       description:
-          'La historia nos cuenta que primero, el arquitecto talló su nombre debajo del faro, lo cubrió con yeso y luego talló el nombre del Rey. Después de varios años, el yeso que llevaba el nombre del Rey se desintegró y el nombre de Sostratus apareció a todos.',
+          'La historia nos cuenta que primero, el arquitecto talló su nombre debajo del faro, lo cubrió con yeso y luego talló el nombre del Rey. Después de varios años, el yeso que llevaba el nombre del Rey se desintegró y el nombre de Sostratus apareció a todos.\n\nEn este caso se utilizó la relación entre el tiempo y el yeso.',
     ),
   ];
 }

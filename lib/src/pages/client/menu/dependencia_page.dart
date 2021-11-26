@@ -28,39 +28,25 @@ class _DependenciaPageState extends State<DependenciaPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: MyColors.primaryColorBackground_01,
-      appBar: AppBar(
-        title: Text(
-          'Herramientas',
-          style: TextStyle(
-            fontFamily: 'Rationale',
-            fontSize: 28,
-            color: MyColors.primaryColorText_02,
-          ),
-        ),
-        backgroundColor: MyColors.primaryColor,
-      ),
+      backgroundColor: Color(0xFFFFFFFF),
       body: Container(
         margin: EdgeInsets.symmetric(horizontal: 20, vertical: 0),
         width: double.infinity,
         child: SingleChildScrollView(
           child: Column(
             children: [
-              textTitle('CAMBIO DE DEPENDENCIA'),
-              imageBanner('assets/img/dependenciaDescripcion.png'),
-              Container(
-                child: Column(
-                  children: [
-                    textDescripcion(
-                        '¿Puedes pensar en algunos ejemplos en la vida real donde se aplicó esta herramienta?'),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        buttonVerEjemplo('dependenciaejemplo'),
-                      ],
-                    ),
-                  ],
-                ),
+              imageBanner('assets/img/logo/CAMBIO_DEPENDENCIA.png'),
+              containerTitle('CAMBIO DE DEPENDENCIAS'),
+              // containerSubTitle('SYSTEMATIC INVENTIVE THINKING'),
+              containerDescription(
+                  'Solucionar un problema creando nuevas relaciones o eliminando alguna ya existente entre atributos de un producto.'),
+              containerDescription(
+                  'Objetivo: Crear, cambiar o eliminar dependencias entre variables de un producto y su ambiente.'),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  buttonVerEjemplo('dependenciaejemplo'),
+                ],
               ),
             ],
           ),
@@ -69,58 +55,51 @@ class _DependenciaPageState extends State<DependenciaPage> {
     );
   }
 
-  Widget imageBanner(String textlink) {
-    return Container(
-      // margin: EdgeInsets.only(
-      //     top: 100, bottom: MediaQuery.of(context).size.height * 0.1),
-      padding: EdgeInsets.only(left: 20, right: 20),
-      margin: EdgeInsets.only(top: 10, bottom: 20),
-      child: Image.asset(
-        textlink,
-        width: double.infinity,
-        // width: 300,
-      ),
-    );
-  }
-
-  Widget textDescripcion(String descripcion) {
-    return Align(
-      alignment: Alignment.center,
-      child: Container(
-        width: 300,
-        padding: EdgeInsets.only(bottom: 5),
-        margin: EdgeInsets.only(bottom: 0, top: 15),
-        child: Text(
-          descripcion,
-          textAlign: TextAlign.justify,
-          style: TextStyle(
-            fontSize: 20,
-            fontFamily: 'Puritan_Regular',
-          ),
-        ),
-      ),
-    );
-  }
-
-  Widget textTitle(String titulo) {
+  Widget imageBanner(imageUrl) {
     return Container(
       width: double.infinity,
-      decoration: BoxDecoration(
-        border: Border.all(
-          color: MyColors.primaryColor.withOpacity(0.23),
-          width: 6,
+      height: 250,
+      margin: EdgeInsets.only(top: 80, bottom: 40),
+      padding: EdgeInsets.fromLTRB(0, 5, 0, 5),
+      child: Image(
+        image: AssetImage(
+          imageUrl,
         ),
       ),
+    );
+  }
+
+  Widget containerTitle(String description) {
+    return Container(
+      width: double.infinity,
       // padding: EdgeInsets.fromLTRB(30, 15, 30, 15),
-      margin: EdgeInsets.only(top: 10, bottom: 10),
-      padding: EdgeInsets.fromLTRB(0, 5, 0, 5),
+      margin: EdgeInsets.only(top: 10, bottom: 30),
+      // padding: EdgeInsets.all(5),
       child: Text(
-        titulo,
+        description,
         textAlign: TextAlign.center,
         style: TextStyle(
-          fontSize: 30,
-          fontFamily: 'Puritan',
           color: MyColors.primaryColor,
+          fontSize: 48,
+          fontFamily: 'Rationale',
+        ),
+      ),
+    );
+  }
+
+  Widget containerDescription(String description) {
+    return Container(
+      width: double.infinity,
+      // padding: EdgeInsets.fromLTRB(30, 15, 30, 15),
+      margin: EdgeInsets.only(right: 30, left: 30, bottom: 24),
+      // padding: EdgeInsets.all(5),
+      child: Text(
+        description,
+        textAlign: TextAlign.center,
+        style: TextStyle(
+          color: MyColors.primaryColor,
+          fontSize: 20,
+          fontFamily: 'Puritan-Regular',
         ),
       ),
     );

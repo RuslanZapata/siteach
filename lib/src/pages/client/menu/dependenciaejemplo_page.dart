@@ -49,7 +49,7 @@ class OnboardingDependencia extends StatelessWidget {
       textColor: Color(0xFFFFFFFF),
 // ignore: prefer_const_constructors
       bgColor: Color(0xFF0086A4),
-      imgs: 'assets/img/taza.png',
+      imgs: 'assets/img/ejemplo/taza.png',
     ),
     PageData(
       icon: Icons.hdr_weak,
@@ -57,7 +57,7 @@ class OnboardingDependencia extends StatelessWidget {
           'Anteojos con polarización: Cuando las lentillas se exponen a la luz se van polarizando.',
       textColor: Color(0xFF38424A),
       bgColor: Color(0xFFFAAA33),
-      imgs: 'assets/img/gafas.png',
+      imgs: 'assets/img/ejemplo/gafas.png',
     ),
     PageData(
       icon: Icons.bubble_chart,
@@ -65,7 +65,24 @@ class OnboardingDependencia extends StatelessWidget {
           'Impresión lenticular: Al cambiar el ángulo o posición de visualización, la imagen de dicha impresión cambia por otra.',
       bgColor: Color(0xFF4A3843),
       textColor: Color(0xFFFAAA33),
-      imgs: 'assets/img/lenticular.png',
+      imgs: 'assets/img/ejemplo/lenticular.png',
+    ),
+    PageData(
+      icon: Icons.format_size,
+      title:
+          'Señal de prevención de altura del puente: variables dimensiones de los autos y mensaje.',
+      textColor: Color(0xFFFFFFFF),
+// ignore: prefer_const_constructors
+      bgColor: Color(0xFF0086A4),
+      imgs: 'assets/img/ejemplo/señal_puente.png',
+    ),
+    PageData(
+      icon: Icons.hdr_weak,
+      title:
+          'Bebidas con indicador de temperatura: Hay algunas cervezas cuya etiqueta cambia de color cuando se encuentra a menor temperatura, para así indicarle al consumidor la temperatura correcta para beberlo.',
+      textColor: Color(0xFF38424A),
+      bgColor: Color(0xFFFAAA33),
+      imgs: 'assets/img/ejemplo/cerveza.png',
     ),
   ];
 
@@ -146,7 +163,7 @@ class PageCard extends StatelessWidget {
 
   Widget _buildPicture(
     BuildContext context, {
-    double size = 190,
+    double size = 240,
     // double iconSize = 170,
   }) {
     return Container(

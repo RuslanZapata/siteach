@@ -48,23 +48,40 @@ class OnboardingUnificacion extends StatelessWidget {
           'Limpieza de lengua: Se puede añadir una función más al cepillo de dientes utilizando la parte posterior para la limpieza de la lengua.',
       textColor: Color(0xFFFFFFFF),
 // ignore: prefer_const_constructors
-      bgColor: Color(0xFF0086A4),
-      imgs: 'assets/img/cepillo.png',
+      bgColor: Color(0xFF7688A0),
+      imgs: 'assets/img/ejemplo/cepillo.png',
     ),
     PageData(
       icon: Icons.hdr_weak,
       title: 'Sofá cama: Un mueble de sofá que pueda convertirse en cama.',
-      textColor: Color(0xFF38424A),
+      textColor: Color(0xFF22384A),
       bgColor: Color(0xFFFAAA33),
-      imgs: 'assets/img/sofa.png',
+      imgs: 'assets/img/ejemplo/sofa.png',
     ),
     PageData(
       icon: Icons.bubble_chart,
       title:
           'Tomacorriente con puertos USB: Un tomacorriente donde se puedan conectar cables de enchufe y tenga puertos USB para cargar otros dispositivos.',
-      bgColor: Color(0xFF4A3843),
       textColor: Color(0xFFFAAA33),
-      imgs: 'assets/img/puertoUSB.png',
+      bgColor: Color(0xFF22384A),
+      imgs: 'assets/img/ejemplo/puertoUSB.png',
+    ),
+    PageData(
+      icon: Icons.format_size,
+      title:
+          'The Frame QLED Smart TV con Modo Arte de Samsung: Al apagar el televisor, se convierte en un cuadro de arte decorativo.',
+      textColor: Color(0xFFFFFFFF),
+// ignore: prefer_const_constructors
+      bgColor: Color(0xFF7688A0),
+      imgs: 'assets/img/ejemplo/tv.png',
+    ),
+    PageData(
+      icon: Icons.hdr_weak,
+      title:
+          'Un lavadero que dispensa agua al inodoro: En vez que el agua del lavadero se vaya al drenaje, este se reutiliza conectándose al tanque del inodoro para un segundo uso.',
+      textColor: Color(0xFF22384A),
+      bgColor: Color(0xFFFAAA33),
+      imgs: 'assets/img/ejemplo/inodoro.png',
     ),
   ];
 
@@ -145,7 +162,7 @@ class PageCard extends StatelessWidget {
 
   Widget _buildPicture(
     BuildContext context, {
-    double size = 190,
+    double size = 240,
     // double iconSize = 170,
   }) {
     return Container(
@@ -155,8 +172,8 @@ class PageCard extends StatelessWidget {
         borderRadius: BorderRadius.all(Radius.circular(60.0)),
         color: page.bgColor
             .withBlue(page.bgColor.blue - 40)
-            .withGreen(page.bgColor.green + 20)
-            .withRed(page.bgColor.red - 100)
+            .withGreen(page.bgColor.green - 20)
+            .withRed(page.bgColor.red)
             .withAlpha(90),
       ),
       margin: EdgeInsets.only(
@@ -169,27 +186,6 @@ class PageCard extends StatelessWidget {
             page.imgs,
             width: double.infinity,
           ),
-          // Container(
-          //   padding: EdgeInsets.symmetric(horizontal: 15, vertical: 20),
-          //   width: double.infinity,
-          //   height: double.infinity,
-          //   decoration: BoxDecoration(
-          //     color: Colors.grey,
-          //     image: DecorationImage(
-          //       image: AssetImage(page.imgs),
-          //       alignment: Alignment.topCenter,
-          //       fit: BoxFit.fill,
-          //     ),
-          //   ),
-          // ),
-          // Container(
-          // margin: EdgeInsets.only(
-          //     top: 100, bottom: MediaQuery.of(context).size.height * 0.05),
-          // child: Image.asset(
-          //   page.imgs,
-          // width: 300,
-          // ),
-          // ),
         ],
       ),
     );

@@ -28,37 +28,36 @@ class _MenuPageState extends State<MenuPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
-      appBar: AppBar(
-        title: Text(
-          'Menú Opciones',
-          style: TextStyle(
-            fontFamily: 'Rationale',
-            fontSize: 28,
-            color: MyColors.primaryColorText_02,
-          ),
-        ),
-        backgroundColor: MyColors.primaryColor,
-      ),
+      // appBar: AppBar(
+      //   title: Text(
+      //     'Menú Opciones',
+      //     style: TextStyle(
+      //       fontFamily: 'Rationale',
+      //       fontSize: 28,
+      //       color: MyColors.primaryColorText_02,
+      //     ),
+      //   ),
+      //   backgroundColor: MyColors.primaryColor,
+      // ),
       body: Container(
         padding: EdgeInsets.symmetric(horizontal: 15, vertical: 20),
         width: double.infinity,
         height: double.infinity,
         decoration: BoxDecoration(
-          color: Colors.grey,
-          image: DecorationImage(
-            image: AssetImage('assets/img/fondo.png'),
-            alignment: Alignment.topCenter,
-            fit: BoxFit.fill,
-          ),
+          color: Color(0xFFF1F1F1),
+          // image: DecorationImage(
+          //   image: AssetImage('assets/img/fondo.png'),
+          //   alignment: Alignment.topCenter,
+          //   fit: BoxFit.fill,
+          // ),
         ),
-        // child: Container(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            buttonSIT('Etapa 1: ¿Qué harías tú?'),
-            buttonMedia('Etapa 2: ¡Aprendamos un poco!'),
+            buttonSIT('menusit'),
+            buttonMedia('menumedios'),
             buttonGamer('screen'),
-            buttonReferences('Etapa 4: Evalúate'),
+            buttonReferences('referencias'),
           ],
         ),
       ),
@@ -77,58 +76,6 @@ class _MenuPageState extends State<MenuPage> {
     );
   }
 
-  Widget buttonSignUp(String textButton, String textLink) {
-    return Container(
-      width: double.infinity,
-      margin: EdgeInsets.symmetric(horizontal: 2, vertical: 0),
-      // child: ElevatedButton(
-      //   onPressed: () {
-      //     Navigator.pushNamed(context, textLink);
-      //   },
-      //   child: Text(
-      //     textButton,
-      //     style: TextStyle(
-      //       fontSize: 16,
-      //       fontFamily: 'Mulish',
-      //       color: MyColors.primaryColorText_02,
-      //     ),
-      //   ),
-      //   style: ElevatedButton.styleFrom(
-      //     primary: Colors.black.withOpacity(0.1),
-      //     shape: RoundedRectangleBorder(
-      //       borderRadius: BorderRadius.circular(30),
-      //     ),
-      //     padding: EdgeInsets.symmetric(vertical: 35),
-      //   ),
-      // ),
-      child: ElevatedButton.icon(
-        icon: Icon(
-          Icons.perm_media,
-          color: MyColors.primaryColorBackground_07,
-          size: 36.0,
-        ),
-        label: Text(
-          'Elevated Button',
-          style: TextStyle(
-            fontSize: 32,
-            fontFamily: 'Rationale',
-            color: MyColors.primaryColorBackground_07,
-          ),
-        ),
-        onPressed: () {
-          print('Pressed');
-        },
-        style: ElevatedButton.styleFrom(
-          primary: MyColors.primaryColorBackground_08,
-          shape: new RoundedRectangleBorder(
-            borderRadius: new BorderRadius.circular(20.0),
-          ),
-          padding: EdgeInsets.symmetric(vertical: 25),
-        ),
-      ),
-    );
-  }
-
   Widget buttonSIT(String textLink) {
     return Container(
       width: double.infinity,
@@ -137,7 +84,7 @@ class _MenuPageState extends State<MenuPage> {
         label: Icon(
           Icons.cloud,
           color: MyColors.primaryColorBackground_07,
-          size: 36.0,
+          size: 48.0,
         ),
         icon: Text(
           'SIT   ',
@@ -148,14 +95,14 @@ class _MenuPageState extends State<MenuPage> {
           ),
         ),
         onPressed: () {
-          Navigator.pushNamed(context, 'menusit');
+          Navigator.pushNamed(context, textLink);
         },
         style: ElevatedButton.styleFrom(
-          primary: MyColors.primaryColorBackground_08,
+          primary: MyColors.primaryColor,
           shape: new RoundedRectangleBorder(
             borderRadius: new BorderRadius.circular(20.0),
           ),
-          padding: EdgeInsets.symmetric(vertical: 25),
+          padding: EdgeInsets.symmetric(vertical: 29),
         ),
       ),
     );
@@ -169,25 +116,26 @@ class _MenuPageState extends State<MenuPage> {
         label: Icon(
           Icons.perm_media,
           color: MyColors.primaryColorBackground_07,
-          size: 36.0,
+          size: 48.0,
         ),
         icon: Text(
-          'MEDIA   ',
+          'EJEMPLOS\nMULTIMEDIA',
           style: TextStyle(
             fontSize: 32,
             fontFamily: 'Rationale',
             color: MyColors.primaryColorBackground_07,
           ),
+          textAlign: TextAlign.center,
         ),
         onPressed: () {
-          Navigator.pushNamed(context, 'menumedios');
+          Navigator.pushNamed(context, textLink);
         },
         style: ElevatedButton.styleFrom(
-          primary: MyColors.primaryColorBackground_08,
+          primary: MyColors.primaryColor,
           shape: new RoundedRectangleBorder(
             borderRadius: new BorderRadius.circular(20.0),
           ),
-          padding: EdgeInsets.symmetric(vertical: 25),
+          padding: EdgeInsets.symmetric(vertical: 16),
         ),
       ),
     );
@@ -201,7 +149,7 @@ class _MenuPageState extends State<MenuPage> {
         label: Icon(
           Icons.sports_esports,
           color: MyColors.primaryColorBackground_07,
-          size: 36.0,
+          size: 48.0,
         ),
         icon: Text(
           'JUEGA   ',
@@ -215,11 +163,11 @@ class _MenuPageState extends State<MenuPage> {
           Navigator.pushNamed(context, textLink);
         },
         style: ElevatedButton.styleFrom(
-          primary: MyColors.primaryColorBackground_08,
+          primary: MyColors.primaryColor,
           shape: new RoundedRectangleBorder(
             borderRadius: new BorderRadius.circular(20.0),
           ),
-          padding: EdgeInsets.symmetric(vertical: 25),
+          padding: EdgeInsets.symmetric(vertical: 29),
         ),
       ),
     );
@@ -233,7 +181,7 @@ class _MenuPageState extends State<MenuPage> {
         label: Icon(
           Icons.article,
           color: MyColors.primaryColorBackground_07,
-          size: 36.0,
+          size: 48.0,
         ),
         icon: Text(
           'REFERENCIAS    ',
@@ -244,14 +192,14 @@ class _MenuPageState extends State<MenuPage> {
           ),
         ),
         onPressed: () {
-          Navigator.pushNamed(context, 'prueba');
+          Navigator.pushNamed(context, textLink);
         },
         style: ElevatedButton.styleFrom(
-          primary: MyColors.primaryColorBackground_08,
+          primary: MyColors.primaryColor,
           shape: new RoundedRectangleBorder(
             borderRadius: new BorderRadius.circular(20.0),
           ),
-          padding: EdgeInsets.symmetric(vertical: 25),
+          padding: EdgeInsets.symmetric(vertical: 29),
         ),
       ),
     );

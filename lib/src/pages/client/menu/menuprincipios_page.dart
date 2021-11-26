@@ -28,100 +28,20 @@ class _MenuPrincipiosPageState extends State<MenuPrincipiosPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
-      appBar: AppBar(
-        title: Text(
-          'Menú Principios',
-          style: TextStyle(
-            fontFamily: 'Rationale',
-            fontSize: 28,
-            color: MyColors.primaryColorText_02,
-          ),
-        ),
-        backgroundColor: MyColors.primaryColor,
-      ),
       body: Container(
         padding: EdgeInsets.symmetric(horizontal: 15, vertical: 20),
         width: double.infinity,
         height: double.infinity,
         decoration: BoxDecoration(
-          color: Colors.grey,
-          image: DecorationImage(
-            image: AssetImage('assets/img/fondoPrincipios.png'),
-            alignment: Alignment.topCenter,
-            fit: BoxFit.fill,
-          ),
+          color: Color(0xFFF1F1F1),
         ),
         // child: Container(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            buttonMundoCerrado('Etapa 1: ¿Qué harías tú?'),
-            buttonCambioPrincipios('Etapa 2: ¡Aprendamos un poco!'),
+            buttonMundoCerrado('mundocerrado'),
+            buttonCambioPrincipios('cualidades'),
           ],
-        ),
-      ),
-    );
-  }
-
-  Widget imageBanner() {
-    return Container(
-      // padding: EdgeInsets.only(left: 70, right: 70),
-      width: 250,
-      child: Image.asset(
-        'assets/img/sitimg.png',
-        width: double.infinity,
-        // width: 300,
-      ),
-    );
-  }
-
-  Widget buttonSignUp(String textButton, String textLink) {
-    return Container(
-      width: double.infinity,
-      margin: EdgeInsets.symmetric(horizontal: 2, vertical: 0),
-      // child: ElevatedButton(
-      //   onPressed: () {
-      //     Navigator.pushNamed(context, textLink);
-      //   },
-      //   child: Text(
-      //     textButton,
-      //     style: TextStyle(
-      //       fontSize: 16,
-      //       fontFamily: 'Mulish',
-      //       color: MyColors.primaryColorText_02,
-      //     ),
-      //   ),
-      //   style: ElevatedButton.styleFrom(
-      //     primary: Colors.black.withOpacity(0.1),
-      //     shape: RoundedRectangleBorder(
-      //       borderRadius: BorderRadius.circular(30),
-      //     ),
-      //     padding: EdgeInsets.symmetric(vertical: 35),
-      //   ),
-      // ),
-      child: ElevatedButton.icon(
-        icon: Icon(
-          Icons.perm_media,
-          color: MyColors.primaryColorBackground_07,
-          size: 36.0,
-        ),
-        label: Text(
-          'Elevated Button',
-          style: TextStyle(
-            fontSize: 32,
-            fontFamily: 'Rationale',
-            color: MyColors.primaryColorBackground_07,
-          ),
-        ),
-        onPressed: () {
-          print('Pressed');
-        },
-        style: ElevatedButton.styleFrom(
-          primary: MyColors.primaryColorBackground_10,
-          shape: new RoundedRectangleBorder(
-            borderRadius: new BorderRadius.circular(20.0),
-          ),
-          padding: EdgeInsets.symmetric(vertical: 25),
         ),
       ),
     );
@@ -132,28 +52,28 @@ class _MenuPrincipiosPageState extends State<MenuPrincipiosPage> {
       width: double.infinity,
       margin: EdgeInsets.symmetric(horizontal: 40, vertical: 0),
       child: ElevatedButton.icon(
-        icon: Icon(
+        label: Icon(
           Icons.vpn_lock,
           color: MyColors.primaryColorBackground_07,
-          size: 36.0,
+          size: 48.0,
         ),
-        label: Text(
+        icon: Text(
           'Mundo cerrado',
           style: TextStyle(
-            fontSize: 28,
+            fontSize: 32,
             fontFamily: 'Rationale',
             color: MyColors.primaryColorBackground_07,
           ),
         ),
         onPressed: () {
-          print('Pressed');
+          Navigator.pushNamed(context, textLink);
         },
         style: ElevatedButton.styleFrom(
-          primary: MyColors.primaryColorBackground_10,
+          primary: MyColors.primaryColor,
           shape: new RoundedRectangleBorder(
             borderRadius: new BorderRadius.circular(20.0),
           ),
-          padding: EdgeInsets.symmetric(vertical: 25),
+          padding: EdgeInsets.symmetric(vertical: 28),
         ),
       ),
     );
@@ -164,28 +84,28 @@ class _MenuPrincipiosPageState extends State<MenuPrincipiosPage> {
       width: double.infinity,
       margin: EdgeInsets.symmetric(horizontal: 40, vertical: 0),
       child: ElevatedButton.icon(
-        icon: Icon(
+        label: Icon(
           Icons.change_circle_outlined,
           color: MyColors.primaryColorBackground_07,
-          size: 36.0,
+          size: 48.0,
         ),
-        label: Text(
-          'Cambio de cualidades',
+        icon: Text(
+          'Cambio de \ncualidades',
           style: TextStyle(
-            fontSize: 28,
+            fontSize: 32,
             fontFamily: 'Rationale',
             color: MyColors.primaryColorBackground_07,
           ),
         ),
         onPressed: () {
-          print('Pressed');
+          Navigator.pushNamed(context, textLink);
         },
         style: ElevatedButton.styleFrom(
-          primary: MyColors.primaryColorBackground_10,
+          primary: MyColors.primaryColor,
           shape: new RoundedRectangleBorder(
             borderRadius: new BorderRadius.circular(20.0),
           ),
-          padding: EdgeInsets.symmetric(vertical: 25),
+          padding: EdgeInsets.symmetric(vertical: 16),
         ),
       ),
     );
