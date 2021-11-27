@@ -12,16 +12,14 @@
 // ignore_for_file: unused_local_variable
 // ignore_for_file: avoid_print
 import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:siteach/src/api/environment.dart';
 import 'package:siteach/src/models/response_api.dart';
-import 'package:siteach/src/models/users.dart';
 import 'package:http/http.dart' as http;
 
-class UsersProvider {
+class SesionProvider {
   String _url = Environment.API_SITEACH;
-  String _api = '/api/users';
+  String _api = '/api/session';
 
   BuildContext context;
 
@@ -29,13 +27,15 @@ class UsersProvider {
     this.context = context;
   }
 
-  Future<ResponseApi> create(User user) async {
+  Future<ResponseApi> create(
+    String idUser,
+  ) async {
     try {
       Uri url = Uri.parse('$_url$_api/create');
-      String bodyParams = json.encode(user);
+      String bodyParams = json.encode({'idUser': idUser});
 
       Map<String, String> headers = {
-        'Content-type': 'application/json',
+        'Content-Type': 'application/json',
       };
 
       final res = await http.post(url, headers: headers, body: bodyParams);
@@ -49,11 +49,12 @@ class UsersProvider {
     }
   }
 
-  Future<ResponseApi> login(String username, String password) async {
+  Future<ResponseApi> createCierre(
+    String idUser,
+  ) async {
     try {
-      Uri url = Uri.parse('$_url$_api/login');
-      String bodyParams =
-          json.encode({'username': username, 'password': password});
+      Uri url = Uri.parse('$_url$_api/createcierre');
+      String bodyParams = json.encode({'idUser': idUser});
 
       Map<String, String> headers = {
         'Content-Type': 'application/json',

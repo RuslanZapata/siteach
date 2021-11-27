@@ -15,55 +15,43 @@
 import 'package:flutter/material.dart';
 import 'package:siteach/src/models/response_api.dart';
 import 'package:siteach/src/models/users.dart';
-import 'package:siteach/src/provider/user_provider.dart';
+import 'package:siteach/src/provider/sesion_provider.dart';
 import 'package:siteach/src/utils/my_snackbar.dart';
 import 'package:siteach/src/utils/shared_pref.dart';
 
-class LoginController {
+class BienvenidoController {
   BuildContext context;
-  TextEditingController userNameController = new TextEditingController();
-  TextEditingController passwordController = new TextEditingController();
+  String idUser;
 
-  UsersProvider usersProvider = new UsersProvider();
+  SesionProvider sesionProvider = new SesionProvider();
   SharedPref _sharedPref = new SharedPref();
 
   Future init(BuildContext context) async {
     this.context = context;
-    await usersProvider.init(context);
+    await sesionProvider.init(context);
 
     User user = User.fromJson(await _sharedPref.read('user') ?? {});
 
     print('Usuario: ${user.toJson()}');
+    idUser = user.idUser;
 
-    if (user?.sessionToken != null) {
-      Navigator.pushNamedAndRemoveUntil(
-          context, 'bienvenido', (route) => false);
-    }
+    // if (user?.sessionToken != null) {
+    //   Navigator.pushNamedAndRemoveUntil(
+    //       context, 'bienvenido', (route) => false);
+    // }
   }
 
-  void goToSignUpPega() {
-    Navigator.pushNamed(context, 'signup');
-  }
+  void create() async {
+    print('User===> $idUser');
+    ResponseApi responseApi = await sesionProvider.create(idUser);
 
-  void login() async {
-    String userName = userNameController.text.trim();
-    String password = passwordController.text.trim();
-    print('User===> $userName');
-    print('Password===> $password');
-
-    ResponseApi responseApi = await usersProvider.login(userName, password);
-
-    print('User===> $userName');
-    print('Password===> $password');
-    print('Password===> $responseApi');
+    print('Password===> $idUser');
+    print('Password===> ${responseApi.toJson()}');
 
     if (responseApi.success) {
-      User user = User.fromJson(responseApi.data);
-      _sharedPref.save('user', user.toJson());
       MySnackbar.show(context, responseApi.message);
       // Navigator.pushNamed(context, 'menu');
-      Navigator.pushNamedAndRemoveUntil(
-          context, 'bienvenido', (route) => false);
+      Navigator.pushNamedAndRemoveUntil(context, 'menu', (route) => false);
     } else {
       MySnackbar.show(context, responseApi.message);
     }

@@ -14,6 +14,8 @@
 // ignore_for_file: dead_code
 // ignore_for_file: non_constant_identifier_names
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
+import 'package:siteach/src/pages/client/menu/menu_controller.dart';
 import 'package:siteach/src/utils/my_colors.dart';
 
 class MenuPage extends StatefulWidget {
@@ -24,21 +26,54 @@ class MenuPage extends StatefulWidget {
 }
 
 class _MenuPageState extends State<MenuPage> {
+  MenuController _con = new MenuController();
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+
+    SchedulerBinding.instance.addPostFrameCallback((timeStamp) {
+      _con.init(context);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
-      // appBar: AppBar(
-      //   title: Text(
-      //     'Menú Opciones',
-      //     style: TextStyle(
-      //       fontFamily: 'Rationale',
-      //       fontSize: 28,
-      //       color: MyColors.primaryColorText_02,
-      //     ),
-      //   ),
-      //   backgroundColor: MyColors.primaryColor,
-      // ),
+      appBar: AppBar(
+        title: Text(
+          'Menú Opciones',
+          style: TextStyle(
+            fontFamily: 'Rationale',
+            fontSize: 28,
+            color: MyColors.primaryColorText_02,
+          ),
+        ),
+        backgroundColor: MyColors.primaryColor,
+        leading: GestureDetector(
+          onTap: () {},
+          child: Icon(
+            Icons.home,
+            color: MyColors.primaryColorText_02,
+            size: 36,
+          ),
+        ),
+        actions: <Widget>[
+          Padding(
+            padding: EdgeInsets.only(right: 20.0),
+            child: GestureDetector(
+              onTap: _con.createCierre,
+              child: Icon(
+                Icons.power_settings_new,
+                color: MyColors.primaryColorText_02,
+                size: 36,
+              ),
+            ),
+          ),
+        ],
+      ),
       body: Container(
         padding: EdgeInsets.symmetric(horizontal: 15, vertical: 20),
         width: double.infinity,

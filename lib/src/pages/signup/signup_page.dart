@@ -29,8 +29,7 @@ class _SignUpPageState extends State<SignUpPage> {
   void initState() {
     // TODO: implement initState
     super.initState();
-
-    SchedulerBinding.instance.addPersistentFrameCallback((timeStamp) {
+    SchedulerBinding.instance.addPostFrameCallback((timeStamp) {
       _con.init(context);
     });
   }
@@ -226,7 +225,7 @@ class _SignUpPageState extends State<SignUpPage> {
       width: double.infinity,
       margin: EdgeInsets.symmetric(horizontal: 50, vertical: 5),
       child: ElevatedButton(
-        onPressed: () {},
+        onPressed: _con.goTologinPega,
         child: Text(
           'Iniciar sesión',
         ),

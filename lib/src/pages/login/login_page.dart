@@ -160,28 +160,4 @@ class _LoginPageState extends State<LoginPage> {
       ),
     );
   }
-
-  // Widget rowTextDontHaveAccount() {
-  //   return Row(
-  //     mainAxisAlignment: MainAxisAlignment.center,
-  //     children: [
-  //       Text(
-  //         '¿No tienes cuenta?',
-  //         style: TextStyle(
-  //           color: MyColors.primaryColor,
-  //         ),
-  //       ),
-  //       SizedBox(
-  //         width: 10,
-  //       ),
-  //       Text(
-  //         'Registrate',
-  //         style: TextStyle(
-  //           fontWeight: FontWeight.bold,
-  //           color: MyColors.primaryColor,
-  //         ),
-  //       ),
-  //     ],
-  //   );
-  // }
 }

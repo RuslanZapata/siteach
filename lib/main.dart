@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:siteach/src/pages/case/page/home_page.dart';
 import 'package:siteach/src/pages/client/bienvenido/bienvenido_page.dart';
-import 'package:siteach/src/pages/client/bienvenido/welcome_page.dart';
+// import 'package:siteach/src/pages/client/bienvenido/welcome_page.dart';
 import 'package:siteach/src/pages/client/games/home_screen.dart';
 import 'package:siteach/src/pages/client/menu/cualidades_page.dart';
 import 'package:siteach/src/pages/client/menu/cualidadesejemplo_page.dart';
@@ -57,7 +57,7 @@ class _MyAppState extends State<MyApp> {
       // theme: ThemeData(
       //   primaryColor: MyColors.primaryColor,
       // ),
-      initialRoute: 'menu',
+      initialRoute: 'login',
       routes: {
         // Login y Sign Up
         'login': (BuildContext context) => LoginPage(),
@@ -94,7 +94,7 @@ class _MyAppState extends State<MyApp> {
         'videounificacion': (BuildContext context) => UnificacionVideoPage(),
         'videodependencia': (BuildContext context) => DependenciaVideoPage(),
         'bienvenido': (BuildContext context) => BienvenidoPage(),
-        'welcome': (BuildContext context) => WelcomePage(),
+        // 'welcome': (BuildContext context) => WelcomePage(),
       },
     );
   }

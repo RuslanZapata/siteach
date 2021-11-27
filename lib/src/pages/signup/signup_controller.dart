@@ -27,9 +27,13 @@ class SignUpController {
 
   UsersProvider usersProvider = new UsersProvider();
 
-  Future init(BuildContext context) {
+  Future init(BuildContext context) async {
     this.context = context;
-    usersProvider.init(context);
+    await usersProvider.init(context);
+  }
+
+  void goTologinPega() {
+    Navigator.pushNamed(context, 'login');
   }
 
   void singup() async {
@@ -38,7 +42,6 @@ class SignUpController {
     String lastName = lastNameController.text;
     String password = passwordController.text.trim();
     String confirmPassword = confirmPasswordController.text.trim();
-
     if (userName.isEmpty ||
         name.isEmpty ||
         lastName.isEmpty ||
@@ -58,15 +61,23 @@ class SignUpController {
       return;
     }
 
-    if (password.length <= 6) {
+    if (password.length < 6) {
       MySnackbar.show(context, 'La contraseña debe tener mas de 6 caracteres');
       return;
     }
-
+    print('Holaaaaaaaaaa');
+    print(userName);
+    print(name);
+    print(lastName);
+    print(password);
+    print(confirmPassword);
     User user = new User(
         username: userName, name: name, lastname: lastName, password: password);
+    print('5555555555');
+    print('user');
 
     ResponseApi responseApi = await usersProvider.create(user);
+    print('22222222222');
 
     MySnackbar.show(context, responseApi.message);
   }

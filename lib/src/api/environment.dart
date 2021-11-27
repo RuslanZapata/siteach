@@ -13,5 +13,5 @@
 // ignore_for_file: avoid_print
 // ignore_for_file: constant_identifier_names
 class Environment {
-  static const String API_SITEACH = "192.168.1.2:3000";
+  static const String API_SITEACH = "https://siteach-app.herokuapp.com";
 }
